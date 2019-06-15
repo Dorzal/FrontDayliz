@@ -1,12 +1,6 @@
 <div class="container" >
-
   <h2>{{singleCompany$?.id}} - {{singleCompany$?.name}}</h2>
   <p>{{singleCompany$?.logo}}</p>
-
-  <h2 *ngFor="let item of singleCompany$?.allProducts">Produits liés à l'entreprise </h2>
-  <p>{{item}}</p>
-
-  
 </div>
 
 <a routerLink="/companies">Retour</a>
