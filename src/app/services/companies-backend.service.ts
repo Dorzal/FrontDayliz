@@ -17,12 +17,8 @@ export class CompaniesBackendService {
   }
 
   getCompanyById(id: string): Observable<CompaniesB[]> {
-    id = id.trim();
-
-    // Add safe, URL encoded search parameter if there is a search term
-    const options = id ?
-     { params: new HttpParams().set('id', id) } : {};
-    return this.http.get<CompaniesB[]>(this.apiUrl, options);
+    this.apiUrl = this.apiUrl + id;
+    return this.http.get<CompaniesB[]>(this.apiUrl);
   }
 
 
