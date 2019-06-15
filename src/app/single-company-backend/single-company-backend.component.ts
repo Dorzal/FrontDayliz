@@ -14,9 +14,15 @@ export class SingleCompanyBackendComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params["company['id']"];
-    return this.companiesBackendService.getCompanyById(id)
-    .subscribe(data => this.singleCompany$ = data);
+    this.getCompanyById(id);
     
   }
+
+  getCompanyById(id) {
+    this.companiesBackendService.getCompanyById(id)
+    .subscribe(data => this.singleCompany$ = data);
+  }
+
+
 
 }

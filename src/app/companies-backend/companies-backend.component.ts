@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CompaniesBackendService } from '../services/companies-backend.service';
 import { CompaniesB } from './companiesB';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,11 +11,14 @@ import { CompaniesB } from './companiesB';
 })
 export class CompaniesBackendComponent implements OnInit {
 
-
   companies$: CompaniesB[];
-  constructor(private companiesBackendService: CompaniesBackendService) { }
+  constructor(private companiesBackendService: CompaniesBackendService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.listConpanies();
+  }
+
+  listConpanies() {
     return this.companiesBackendService.listCompanies().subscribe(data => this.companies$ = data)
   }
   
