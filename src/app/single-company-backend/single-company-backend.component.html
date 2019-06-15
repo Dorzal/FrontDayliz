@@ -1,8 +1,6 @@
-<div class="container" *ngFor='let single of CompaniesB'>
-
-  <h2>{{single.id}}</h2>
-  <h2>{{single.name}}</h2>
-
+<div class="container" >
+  <h2>{{singleCompany$?.id}} - {{singleCompany$?.name}}</h2>
+  <p>{{singleCompany$?.logo}}</p>
 </div>
 
 <a routerLink="/companies">Retour</a>
