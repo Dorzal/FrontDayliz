@@ -7,7 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BackendComponent } from './backend/backend.component';
 import { FrontendComponent } from './frontend/frontend.component';
 import { CompaniesBackendComponent } from './companies-backend/companies-backend.component';
-import { CompaniesBackendService } from './companies-backend/companies-backend.service';
+
+import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
+import { CompaniesBackendService } from './services/companies-backend.service';
 
 
 
@@ -17,6 +19,7 @@ import { CompaniesBackendService } from './companies-backend/companies-backend.s
     BackendComponent,
     FrontendComponent,
     CompaniesBackendComponent,
+    SingleCompanyBackendComponent,
 
   ],
   imports: [
