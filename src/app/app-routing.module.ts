@@ -6,7 +6,7 @@ import { BackendComponent } from './backend/backend.component';
 
 const routes: Routes = [
   { path: 'companies', component: CompaniesBackendComponent},
-  { path: "companies/:company['id']", component: SingleCompanyBackendComponent},
+  { path: "detail-company/:id", component: SingleCompanyBackendComponent},
   { path: 'backend', component: BackendComponent}
 ];
 

@@ -11,12 +11,14 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let company of companies$">
-          <td>{{company.id}}</td>
-          <td>{{company.name}}</td>
-          <td>{{company.logo}}</td>
-          <td><a [routerLink]="[company.id]" >modifier</a></td>
-          <td></td>
+      <tr *ngFor="let company of companies">
+            
+                <td>{{company?.id}}</td>
+                <td>{{company?.name}}</td>
+                <td>{{company?.logo}}</td>
+                <td><a routerLink="/detail-company/{{company?.id}}">Editer</a></td>
+                <td><button class="delete" title="delete company" (click)="delete(company)">x</button></td>
+            
       </tr>
   </tbody>
   <tfoot>
@@ -25,7 +27,7 @@
         <th>Name</th>
         <th>Logo</th>
         <th>Modifier</th>
-          <th>Supprimer</th>
+        <th>Supprimer</th>
       </tr>
   </tfoot>
 </table>

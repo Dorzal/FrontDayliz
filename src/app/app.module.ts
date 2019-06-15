@@ -10,6 +10,7 @@ import { CompaniesBackendComponent } from './companies-backend/companies-backend
 
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
 import { CompaniesBackendService } from './services/companies-backend.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +26,8 @@ import { CompaniesBackendService } from './services/companies-backend.service';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [CompaniesBackendService],
   bootstrap: [AppComponent]
