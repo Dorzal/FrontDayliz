@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CompaniesBackendService } from './companies-backend.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { CompaniesBackendService } from '../services/companies-backend.service';
 import { CompaniesB } from './companiesB';
 
 
@@ -10,13 +10,13 @@ import { CompaniesB } from './companiesB';
 })
 export class CompaniesBackendComponent implements OnInit {
 
+
   companies$: CompaniesB[];
   constructor(private companiesBackendService: CompaniesBackendService) { }
 
   ngOnInit() {
-    return this.companiesBackendService.listCategories().subscribe(data => this.companies$ = data)
+    return this.companiesBackendService.listCompanies().subscribe(data => this.companies$ = data)
   }
-
   
 
 }
