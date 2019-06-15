@@ -10,6 +10,9 @@ import { CompaniesBackendComponent } from './companies-backend/companies-backend
 
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
 import { CompaniesBackendService } from './services/companies-backend.service';
+import { SingleCategoryBackendComponent } from './single-category-backend/single-category-backend.component';
+import { CategoriesBackendComponent } from './categories-backend/categories-backend.component';
+import { CategoriesBackendService } from './services/categories-backend.service';
 
 
 
@@ -20,6 +23,8 @@ import { CompaniesBackendService } from './services/companies-backend.service';
     FrontendComponent,
     CompaniesBackendComponent,
     SingleCompanyBackendComponent,
+    SingleCategoryBackendComponent,
+    CategoriesBackendComponent,
 
   ],
   imports: [
@@ -27,7 +32,7 @@ import { CompaniesBackendService } from './services/companies-backend.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [CompaniesBackendService],
+  providers: [CompaniesBackendService, CategoriesBackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
