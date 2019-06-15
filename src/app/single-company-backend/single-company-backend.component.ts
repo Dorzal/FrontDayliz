@@ -9,15 +9,13 @@ import { CompaniesB } from '../companies-backend/companiesB';
   styleUrls: ['./single-company-backend.component.scss']
 })
 export class SingleCompanyBackendComponent implements OnInit {
-  CompaniesB: CompaniesB[];
-  singleCompany$: CompaniesB;
+  singleCompany$: CompaniesB[];
   constructor(private companiesBackendService: CompaniesBackendService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params["company['id']"];
-    this.singleCompany$ = undefined;
     return this.companiesBackendService.getCompanyById(id)
-    .subscribe(data => this.CompaniesB = data);
+    .subscribe(data => this.singleCompany$ = data);
     
   }
 
