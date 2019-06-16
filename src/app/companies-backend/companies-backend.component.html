@@ -3,10 +3,10 @@
 
 <div>
     <label>Nom:
-        <input #companyName />
+        <input #companyName class="form-control"/>
     </label>
     <label>Logo:
-        <input #companyLogo />
+        <input #companyLogo class="form-control"/>
     </label>
     <button (click)="add(companyName.value, companyLogo.value)" companyName.value='' companyLogo.value='' class="btn btn-success">
         +

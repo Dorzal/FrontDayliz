@@ -3,13 +3,13 @@
 
 <div>
     <label>Nom:
-        <input #premiumName />
+        <input #premiumName class="form-control"/>
     </label>
     <label> prix:
-        <input #premiumPrice />
+        <input #premiumPrice class="form-control"/>
     </label>
     <label>Durée:
-        <input #premiumTime/>
+        <input #premiumTime class="form-control"/>
     </label>
 
     <button (click)="add(premiumName.value, premiumPrice.value, premiumTime.value)" premiumName.value='' premiumPrice.value='' premiumTime.value='' class="btn btn-success">
