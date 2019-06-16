@@ -4,4 +4,6 @@ export class UsersB {
     'roles': string;
     'password': string;
     'birthday': string;
+    'creation': string;
+    'avatar': string;
 }
