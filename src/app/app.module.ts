@@ -17,6 +17,9 @@ import { SinglePremiumBackendComponent } from './single-premium-backend/single-p
 import { SubCategoriesBackendComponent } from './sub-categories-backend/sub-categories-backend.component';
 import { SubCategoriesBackendService } from './services/sub-categories-backend.service';
 import { SingleSubCategoryBackendComponent } from './single-sub-category-backend/single-sub-category-backend.component';
+import { UsersBackendService } from './services/users-backend.service';
+import { UsersBackendComponent } from './users-backend/users-backend.component';
+import { SingleUserBackendComponent } from './single-user-backend/single-user-backend.component';
 
 
 
@@ -30,7 +33,9 @@ import { SingleSubCategoryBackendComponent } from './single-sub-category-backend
     PremiumsBackendComponent,
     SinglePremiumBackendComponent,
     SubCategoriesBackendComponent,
-    SingleSubCategoryBackendComponent
+    SingleSubCategoryBackendComponent,
+    UsersBackendComponent,
+    SingleUserBackendComponent
 
   ],
   imports: [
@@ -42,7 +47,8 @@ import { SingleSubCategoryBackendComponent } from './single-sub-category-backend
   providers: [
     CompaniesBackendService,
     PremiumsBackendService,
-    SubCategoriesBackendService
+    SubCategoriesBackendService,
+    UsersBackendService
   ],
   bootstrap: [AppComponent]
 })

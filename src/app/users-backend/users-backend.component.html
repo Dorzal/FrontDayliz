@@ -1,0 +1,55 @@
+<h1 class="h1">Gestion du service : Utilisateurs</h1>
+
+
+<div>
+    <label>Email:
+        <input #userEmail class="form-control"/>
+    </label>
+    <label>Role:
+        <input #userRole class="form-control"/>
+    </label>
+    <label>password:
+      <input #userPassword class="form-control"/>
+    </label>
+    <label>Anniversaire:
+      <input #userBirthday class="form-control"/>
+    </label>
+    <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' class="btn btn-success">
+        +
+    </button>
+</div>
+
+<table class="table table-striped table-bordered" style="width:100%">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Email</th>
+          <th>Date de naissance</th>
+          <th>Role</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let user of users">
+            
+                <td>{{user?.id}}</td>
+                <td>{{user?.email}}</td>
+                <td>{{user?.birthday}}</td>
+                <td>{{user?.roles}}</td>
+                <td><a routerLink="/detail-user/{{user?.id}}"><span class="badge badge-secondary">Editer</span></a></td>
+                <td><button class="btn btn-danger" title="delete user" (click)="delete(user)">Supprimer</button></td>
+            
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Date de naissance</th>
+        <th>Role</th>
+        <th></th>
+        <th></th>
+      </tr>
+  </tfoot>
+</table>
