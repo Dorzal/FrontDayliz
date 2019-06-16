@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { PremiumsBackendService } from './services/premiums-backend.service';
 import { PremiumsBackendComponent } from './premiums-backend/premiums-backend.component';
 import { SinglePremiumBackendComponent } from './single-premium-backend/single-premium-backend.component';
+import { SubCategoriesBackendComponent } from './sub-categories-backend/sub-categories-backend.component';
+import { SubCategoriesBackendService } from './services/sub-categories-backend.service';
+import { SingleSubCategoryBackendComponent } from './single-sub-category-backend/single-sub-category-backend.component';
 
 
 
@@ -26,6 +29,8 @@ import { SinglePremiumBackendComponent } from './single-premium-backend/single-p
     SingleCompanyBackendComponent,
     PremiumsBackendComponent,
     SinglePremiumBackendComponent,
+    SubCategoriesBackendComponent,
+    SingleSubCategoryBackendComponent
 
   ],
   imports: [
@@ -36,7 +41,8 @@ import { SinglePremiumBackendComponent } from './single-premium-backend/single-p
   ],
   providers: [
     CompaniesBackendService,
-    PremiumsBackendService
+    PremiumsBackendService,
+    SubCategoriesBackendService
   ],
   bootstrap: [AppComponent]
 })
