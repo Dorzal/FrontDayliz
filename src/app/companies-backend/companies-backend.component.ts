@@ -26,6 +26,9 @@ export class CompaniesBackendComponent implements OnInit {
     this.companies = this.companies.filter(c => c !== company);
     this.companiesBackendService.deleteCompany(company).subscribe();
   }
-  
 
+  add(name: string, logo: string): void {
+    if (!name || !logo) { return;}
+    this.companiesBackendService.addCompany({name, logo} as CompaniesB).subscribe(company => {this.companies.push(company)});
+  }
 }

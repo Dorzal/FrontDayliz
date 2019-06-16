@@ -37,6 +37,10 @@ export class CompaniesBackendService {
     return this.http.delete<CompaniesB>(url, httpOptions);
   }
 
+  addCompany( company: CompaniesB): Observable<CompaniesB> {
+    return this.http.post<CompaniesB>(this.apiUrl, company, httpOptions);
+  }
+
   
 
 

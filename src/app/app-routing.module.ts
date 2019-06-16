@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { CompaniesBackendComponent } from './companies-backend/companies-backend.component';
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
 import { BackendComponent } from './backend/backend.component';
+import { PremiumsBackendComponent } from './premiums-backend/premiums-backend.component';
+import { SinglePremiumBackendComponent } from './single-premium-backend/single-premium-backend.component';
 
 const routes: Routes = [
   { path: 'companies', component: CompaniesBackendComponent},
   { path: "detail-company/:id", component: SingleCompanyBackendComponent},
-  { path: 'backend', component: BackendComponent}
+  { path: 'backend', component: BackendComponent},
+  { path: 'premiums', component: PremiumsBackendComponent},
+  { path: "detail-premium/:id", component: SinglePremiumBackendComponent}
 ];
 
 @NgModule({

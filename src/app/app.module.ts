@@ -11,6 +11,9 @@ import { CompaniesBackendComponent } from './companies-backend/companies-backend
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
 import { CompaniesBackendService } from './services/companies-backend.service';
 import { FormsModule } from '@angular/forms';
+import { PremiumsBackendService } from './services/premiums-backend.service';
+import { PremiumsBackendComponent } from './premiums-backend/premiums-backend.component';
+import { SinglePremiumBackendComponent } from './single-premium-backend/single-premium-backend.component';
 
 
 
@@ -21,6 +24,8 @@ import { FormsModule } from '@angular/forms';
     FrontendComponent,
     CompaniesBackendComponent,
     SingleCompanyBackendComponent,
+    PremiumsBackendComponent,
+    SinglePremiumBackendComponent,
 
   ],
   imports: [
@@ -29,7 +34,10 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CompaniesBackendService],
+  providers: [
+    CompaniesBackendService,
+    PremiumsBackendService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

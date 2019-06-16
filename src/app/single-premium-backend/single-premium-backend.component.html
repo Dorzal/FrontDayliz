@@ -1,0 +1,19 @@
+<div *ngIf="premium">
+    <h2>{{premium.name | uppercase}}</h2>
+    <div><span>id: </span> {{ premium.id}}</div>
+    <div><span>prix: </span> {{ premium.price}}</div>
+    <div><span>durée: </span> {{ premium.time}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="premium.name" placeholder="name"/>
+      </label>
+      <label>prix:
+        <input [(ngModel)]="premium.price" placeholder="price"/>
+      </label>
+      <label>durée:
+        <input [(ngModel)]="premium.time" placeholder="time"/>
+      </label>
+    </div>
+    <button (click)="goBack()">retour</button>
+    <button (click)="save()">modifier</button>
+</div>
