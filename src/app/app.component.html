@@ -1,9 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/backend">Administration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/companies">Entreprises</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/premiums">Premiums</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/subcategories">Sous-Catégories</a>
+        </li>
+</ul>
 
 <div class="container">
   
-    <li routerLinkActive="active" ><a routerLink="companies">Toutes les entreprises</a></li>
     <router-outlet></router-outlet>
   
 </div>

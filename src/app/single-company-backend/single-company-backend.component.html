@@ -1,6 +1,15 @@
-<div class="container" >
-  <h2>{{singleCompany$?.id}} - {{singleCompany$?.name}}</h2>
-  <p>{{singleCompany$?.logo}}</p>
+<div *ngIf="company">
+<h2>{{company.name | uppercase}}</h2>
+<div><span>id: </span> {{ company.id}}</div>
+<div><span>logo: </span> {{ company.logo}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="company.name" placeholder="name" class="form-control"/>
+  </label>
+  <label>logo:
+    <input [(ngModel)]="company.logo" placeholder="logo" class="form-control"/>
+  </label>
 </div>
-
-<a routerLink="/companies">Retour</a>
+<button (click)="goBack()" class="btn btn-warning">retour</button>
+<button (click)="save()" class="btn btn-primary">modifier</button>
+</div>

@@ -10,6 +10,13 @@ import { CompaniesBackendComponent } from './companies-backend/companies-backend
 
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
 import { CompaniesBackendService } from './services/companies-backend.service';
+import { FormsModule } from '@angular/forms';
+import { PremiumsBackendService } from './services/premiums-backend.service';
+import { PremiumsBackendComponent } from './premiums-backend/premiums-backend.component';
+import { SinglePremiumBackendComponent } from './single-premium-backend/single-premium-backend.component';
+import { SubCategoriesBackendComponent } from './sub-categories-backend/sub-categories-backend.component';
+import { SubCategoriesBackendService } from './services/sub-categories-backend.service';
+import { SingleSubCategoryBackendComponent } from './single-sub-category-backend/single-sub-category-backend.component';
 
 
 
@@ -20,14 +27,23 @@ import { CompaniesBackendService } from './services/companies-backend.service';
     FrontendComponent,
     CompaniesBackendComponent,
     SingleCompanyBackendComponent,
+    PremiumsBackendComponent,
+    SinglePremiumBackendComponent,
+    SubCategoriesBackendComponent,
+    SingleSubCategoryBackendComponent
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [CompaniesBackendService],
+  providers: [
+    CompaniesBackendService,
+    PremiumsBackendService,
+    SubCategoriesBackendService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

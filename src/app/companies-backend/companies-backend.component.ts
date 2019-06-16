@@ -3,6 +3,7 @@ import { CompaniesBackendService } from '../services/companies-backend.service';
 import { CompaniesB } from './companiesB';
 
 
+
 @Component({
   selector: 'app-companies-backend',
   templateUrl: './companies-backend.component.html',
@@ -10,13 +11,24 @@ import { CompaniesB } from './companiesB';
 })
 export class CompaniesBackendComponent implements OnInit {
 
-
-  companies$: CompaniesB[];
+  companies: CompaniesB[];
   constructor(private companiesBackendService: CompaniesBackendService) { }
 
   ngOnInit() {
-    return this.companiesBackendService.listCompanies().subscribe(data => this.companies$ = data)
+    this.getConpanies();
+  }
+
+  getConpanies(): void {
+    this.companiesBackendService.getCompanies().subscribe(companies => this.companies = companies)
   }
   
+  delete(company: CompaniesB): void {
+    this.companies = this.companies.filter(c => c !== company);
+    this.companiesBackendService.deleteCompany(company).subscribe();
+  }
 
+  add(name: string, logo: string): void {
+    if (!name || !logo) { return;}
+    this.companiesBackendService.addCompany({name, logo} as CompaniesB).subscribe(company => {this.companies.push(company)});
+  }
 }
