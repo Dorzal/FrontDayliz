@@ -14,7 +14,19 @@
     <label>Anniversaire:
       <input #userBirthday class="form-control"/>
     </label>
-    <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' class="btn btn-success">
+    <label>Avatar:
+      <input #userAvatar class="form-control"/>
+    </label>
+    <label>Creation:
+      <input #userCreation class="form-control"/>
+    </label>
+    <label>Nom:
+      <input #userLastName class="form-control"/>
+    </label>
+    <label>Prenom:
+      <input #userFirstName class="form-control"/>
+    </label>
+    <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success">
         +
     </button>
 </div>

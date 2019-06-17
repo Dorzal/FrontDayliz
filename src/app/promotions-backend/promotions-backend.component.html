@@ -1,0 +1,54 @@
+<h1 class="h1">Gestion du service : Promotion</h1>
+
+
+<div>
+    <label>Code:
+        <input #promotionCode class="form-control"/>
+    </label>
+    <label> Durée:
+        <input #promotionTime class="form-control"/>
+    </label>
+    <label>Pourcentage:
+        <input #promotionPercent class="form-control"/>
+    </label>
+
+    <button (click)="add(premiumCode.value, premiumTime.value, premiumPercent.value)" premiumCode.value='' premiumTime.value='' premiumPercent.value='' class="btn btn-success">
+        +
+    </button>
+</div>
+
+<table class="table table-striped table-bordered" style="width:100%">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Code</th>
+          <th>Durée</th>
+          <th>Pourcentage</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let promotion of promotions">
+            
+                <td>{{promotion?.id}}</td>
+                <td>{{promotion?.code}}</td>
+                <td>{{promotion?.time}}</td>
+                <td>{{promotion?.percent}}</td>
+                <td><a routerLink="/detail-promotion/{{promotion?.id}}"><span class="badge badge-secondary">Editer</span></a></td>
+                <td><button class="btn btn-danger" title="delete promotion" (click)="delete(promotion)">Supprimer</button></td>
+            
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Durée</th>
+        <th>Time</th>
+        <th></th>
+        <th></th>
+      </tr>
+  </tfoot>
+</table>
+

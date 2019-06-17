@@ -1,7 +1,7 @@
 export class UsersB {
     'id': number;
     'email': string;
-    'roles': string;
+    'roles': any;
     'password': string;
     'birthday': string;
     'creation': string;

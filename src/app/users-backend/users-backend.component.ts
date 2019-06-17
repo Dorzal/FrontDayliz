@@ -25,9 +25,9 @@ export class UsersBackendComponent implements OnInit {
     this.usersBackendService.deleteUser(user).subscribe();
   }
 
-  add(email: string, roles: string, password: string, birthday: string): void {
-    
-    this.usersBackendService.addUser({email, roles, password, birthday} as UsersB).subscribe(user => {this.users.push(user)});
+  add(email: string, roles: any, password: string, birthday: string, lastName: string, firstName: string, avatar: string): void {
+    roles = [roles];
+    this.usersBackendService.addUser({email, roles, password, birthday, lastName, firstName, avatar} as UsersB).subscribe(user => {this.users.push(user)});
   }
 
 }
