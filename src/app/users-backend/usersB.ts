@@ -6,4 +6,6 @@ export class UsersB {
     'birthday': string;
     'creation': string;
     'avatar': string;
+    'lastName': string;
+    'firstName': string;
 }

@@ -3,8 +3,13 @@
   <div><span>id: </span> {{ user.id}}</div>
   <div><span>email: </span> {{ user.email}}</div>
   <div><span>password: </span> {{ user.password}}</div>
+  <div><span>Nom: </span> {{ user.lastName}}</div>
+  <div><span>Prenom: </span> {{ user.firstName}}</div>
   <div><span>date de naissance: </span> {{ user.birthday}}</div>
   <div><span>role: </span> {{ user.roles}}</div>
+  <div><span>avatar: </span> {{ user.avatar}}</div>
+  <div><span>creation: </span> {{ user.creation}}</div>
+
   <div class="input-group mb-3">
       <label>email:
         <input [(ngModel)]="user.email" placeholder="email" class="form-control"/>
