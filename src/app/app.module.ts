@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BackendComponent } from './backend/backend.component';
-import { FrontendComponent } from './frontend/frontend.component';
 import { CompaniesBackendComponent } from './companies-backend/companies-backend.component';
 
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
@@ -24,6 +23,12 @@ import { PromotionsBackendService } from './services/promotions-backend.service'
 import { PromotionsBackendComponent } from './promotions-backend/promotions-backend.component';
 import { SinglePromotionsBackendComponent } from './single-promotions-backend/single-promotions-backend.component';
 import { ProductsBackendComponent } from './products-backend/products-backend.component';
+import { SingleProductsBackendComponent } from './single-products-backend/single-products-backend.component';
+import { ProductsBackendService } from './services/products-backend.service';
+import { CategoriesBackendComponent } from './categories-backend/categories-backend.component';
+import { CategoriesBackendService } from './services/categories-backend.service';
+import { SingleCategoryBackendComponent } from './single-category-backend/single-category-backend.component';
+
 
 
 
@@ -41,7 +46,10 @@ import { ProductsBackendComponent } from './products-backend/products-backend.co
     SingleUserBackendComponent,
     PromotionsBackendComponent,
     SinglePromotionsBackendComponent,
-    ProductsBackendComponent
+    ProductsBackendComponent,
+    SingleProductsBackendComponent,
+    CategoriesBackendComponent,
+    SingleCategoryBackendComponent,
 
   ],
   imports: [
@@ -55,7 +63,9 @@ import { ProductsBackendComponent } from './products-backend/products-backend.co
     PremiumsBackendService,
     SubCategoriesBackendService,
     UsersBackendService,
-    PromotionsBackendService
+    PromotionsBackendService,
+    ProductsBackendService,
+    CategoriesBackendService
   ],
   bootstrap: [AppComponent]
 })

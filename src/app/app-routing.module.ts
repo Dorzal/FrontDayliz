@@ -12,6 +12,9 @@ import { SingleUserBackendComponent } from './single-user-backend/single-user-ba
 import { PromotionsBackendComponent } from './promotions-backend/promotions-backend.component';
 import { SinglePromotionsBackendComponent } from './single-promotions-backend/single-promotions-backend.component';
 import { ProductsBackendComponent } from './products-backend/products-backend.component';
+import { SingleProductsBackendComponent } from './single-products-backend/single-products-backend.component';
+import { CategoriesBackendComponent } from './categories-backend/categories-backend.component';
+import { SingleCategoryBackendComponent } from './single-category-backend/single-category-backend.component';
 
 const routes: Routes = [
   { path: 'companies', component: CompaniesBackendComponent},
@@ -25,7 +28,10 @@ const routes: Routes = [
   { path: "detail-user/:id", component: SingleUserBackendComponent},
   { path: "promotions", component: PromotionsBackendComponent},
   { path: "detail-promotion/:id", component: SinglePromotionsBackendComponent},
-  { path: "products", component: ProductsBackendComponent}
+  { path: "products", component: ProductsBackendComponent},
+  { path: "detail-product/:id", component: SingleProductsBackendComponent},
+  { path: "categories", component: CategoriesBackendComponent},
+  { path: "detail-category/:id", component: SingleCategoryBackendComponent}
 ];
 
 @NgModule({
