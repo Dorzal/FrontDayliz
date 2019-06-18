@@ -23,6 +23,7 @@ import { SingleUserBackendComponent } from './single-user-backend/single-user-ba
 import { PromotionsBackendService } from './services/promotions-backend.service';
 import { PromotionsBackendComponent } from './promotions-backend/promotions-backend.component';
 import { SinglePromotionsBackendComponent } from './single-promotions-backend/single-promotions-backend.component';
+import { ProductsBackendComponent } from './products-backend/products-backend.component';
 
 
 
@@ -30,7 +31,6 @@ import { SinglePromotionsBackendComponent } from './single-promotions-backend/si
   declarations: [
     AppComponent,
     BackendComponent,
-    FrontendComponent,
     CompaniesBackendComponent,
     SingleCompanyBackendComponent,
     PremiumsBackendComponent,
@@ -40,7 +40,8 @@ import { SinglePromotionsBackendComponent } from './single-promotions-backend/si
     UsersBackendComponent,
     SingleUserBackendComponent,
     PromotionsBackendComponent,
-    SinglePromotionsBackendComponent
+    SinglePromotionsBackendComponent,
+    ProductsBackendComponent
 
   ],
   imports: [
