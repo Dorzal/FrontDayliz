@@ -15,7 +15,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let user of users">
+      <tr *ngFor="let user of users | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
             
                 <td>{{user?.id}}</td>
                 <td>{{user?.email}}</td>
@@ -37,6 +37,8 @@
       </tr>
   </tfoot>
 </table>
+
+<pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>
 
 <div>
   <label>Email:

@@ -13,7 +13,7 @@ export class SubCategoriesBackendComponent implements OnInit {
 
   subcategories: SubcategoriesB[];
   constructor(private subCategoriesBackendService: SubCategoriesBackendService) { }
-
+  pageActuel: number = 1;
   ngOnInit() {
     this.getSubCategories();
   }

@@ -13,7 +13,7 @@ export class PremiumsBackendComponent implements OnInit {
 
   premiums: PremiumsB[];
   constructor(private premiumsBackendService: PremiumsBackendService) { }
-
+  pageActuel: number = 1;
   ngOnInit() {
     this.getPremiums();
   }

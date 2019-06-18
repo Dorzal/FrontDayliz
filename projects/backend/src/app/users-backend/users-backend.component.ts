@@ -11,7 +11,7 @@ export class UsersBackendComponent implements OnInit {
 
   users: UsersB[];
   constructor(private usersBackendService: UsersBackendService) { }
-
+  pageActuel: number = 1;
   ngOnInit() {
     this.getUsers();
   }

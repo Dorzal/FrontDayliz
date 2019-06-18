@@ -14,7 +14,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let promotion of promotions">
+      <tr *ngFor="let promotion of promotions | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
             
                 <td>{{promotion?.id}}</td>
                 <td>{{promotion?.code}}</td>
@@ -36,6 +36,8 @@
       </tr>
   </tfoot>
 </table>
+
+<pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>
 
 <div>
     <label>Code:

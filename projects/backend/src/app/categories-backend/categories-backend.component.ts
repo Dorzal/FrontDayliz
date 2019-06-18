@@ -11,7 +11,7 @@ export class CategoriesBackendComponent implements OnInit {
 
   categories: CategoriesB[];
   constructor(private categoriesBackendService: CategoriesBackendService) { }
-
+  pageActuel: number = 1;
   ngOnInit() {
     this.getCategories();
   }
