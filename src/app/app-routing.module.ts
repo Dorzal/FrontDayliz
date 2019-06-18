@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BackendModule } from 'projects/backend/src/app/app.module';
+import { BackendModule } from '../../projects/backend/src/app/app.module';
 
 const routes: Routes = [
   {
     path: 'backend',
-    loadChildren: 'projects/backend/src/app/app.module#BackendModule'
+    loadChildren: '../../projects/backend/src/app/app.module#BackendModule'
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    BackendModule
+    BackendModule.forRoot()
   ],
   exports: [RouterModule]
 })

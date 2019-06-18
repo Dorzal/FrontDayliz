@@ -4,7 +4,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BackendComponent } from './backend/backend.component';
 import { CompaniesBackendComponent } from './companies-backend/companies-backend.component';
 
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
@@ -28,6 +27,7 @@ import { ProductsBackendService } from './services/products-backend.service';
 import { CategoriesBackendComponent } from './categories-backend/categories-backend.component';
 import { CategoriesBackendService } from './services/categories-backend.service';
 import { SingleCategoryBackendComponent } from './single-category-backend/single-category-backend.component';
+import { NavComponent } from './nav/nav.component';
 
 const providers = [
   CompaniesBackendService,
@@ -43,7 +43,6 @@ const providers = [
 @NgModule({
   declarations: [
     AppComponent,
-    BackendComponent,
     CompaniesBackendComponent,
     SingleCompanyBackendComponent,
     PremiumsBackendComponent,
@@ -58,6 +57,7 @@ const providers = [
     SingleProductsBackendComponent,
     CategoriesBackendComponent,
     SingleCategoryBackendComponent,
+    NavComponent,
 
   ],
   imports: [

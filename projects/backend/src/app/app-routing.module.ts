@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CompaniesBackendComponent } from './companies-backend/companies-backend.component';
 import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
-import { BackendComponent } from './backend/backend.component';
 import { PremiumsBackendComponent } from './premiums-backend/premiums-backend.component';
 import { SinglePremiumBackendComponent } from './single-premium-backend/single-premium-backend.component';
 import { SubCategoriesBackendComponent } from './sub-categories-backend/sub-categories-backend.component';
@@ -19,7 +18,6 @@ import { SingleCategoryBackendComponent } from './single-category-backend/single
 const routes: Routes = [
   { path: 'backend/companies', component: CompaniesBackendComponent},
   { path: "detail-company/:id", component: SingleCompanyBackendComponent},
-  { path: 'backend/backend', component: BackendComponent},
   { path: 'backend/premiums', component: PremiumsBackendComponent},
   { path: "detail-premium/:id", component: SinglePremiumBackendComponent},
   { path: 'backend/subcategories', component: SubCategoriesBackendComponent},
@@ -31,7 +29,8 @@ const routes: Routes = [
   { path: "backend/products", component: ProductsBackendComponent},
   { path: "detail-product/:id", component: SingleProductsBackendComponent},
   { path: "backend/categories", component: CategoriesBackendComponent},
-  { path: "detail-category/:id", component: SingleCategoryBackendComponent}
+  { path: "detail-category/:id", component: SingleCategoryBackendComponent},
+  { path: 'backend', redirectTo: 'backend/companies' }
 ];
 
 @NgModule({
