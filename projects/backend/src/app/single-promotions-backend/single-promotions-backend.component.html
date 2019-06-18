@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+
+<div *ngIf="promotion">
+  <h2>{{promotion.code | uppercase}}</h2>
+  <div><span>id: </span> {{ promotion.id}}</div>
+  <div><span>durée: </span> {{ promotion.time}}</div>
+  <div><span>percent: </span> {{ promotion.percent}}</div>
+  <div class="input-group mb-3">
+      <label>code:
+        <input [(ngModel)]="promotion.code" placeholder="code" class="form-control"/>
+      </label>
+    <label>prix:
+      <input [(ngModel)]="promotion.time" placeholder="time" class="form-control"/>
+    </label>
+    <label>durée:
+      <input [(ngModel)]="promotion.percent" placeholder="percent" class="form-control"/>
+    </label>
+  </div>
+  <button (click)="goBack()" class="btn btn-warning">retour</button>
+  <button (click)="save()" class="btn btn-primary">modifier</button>
+</div>
