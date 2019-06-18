@@ -42,30 +42,28 @@
 
 <div>
   <label>Email:
-      <input #userEmail class="form-control"/>
+      <input #userEmail class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>Role:
-      <input #userRole class="form-control"/>
+      <input #userRole class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>password:
-    <input #userPassword class="form-control"/>
+    <input #userPassword class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>Anniversaire:
-    <input #userBirthday class="form-control"/>
+    <input #userBirthday class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>Avatar:
-    <input #userAvatar class="form-control"/>
+    <input #userAvatar class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>Creation:
-    <input #userCreation class="form-control"/>
+    <input #userCreation class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>Nom:
-    <input #userLastName class="form-control"/>
+    <input #userLastName class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
   <label>Prenom:
-    <input #userFirstName class="form-control"/>
+    <input #userFirstName class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
   </label>
-  <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success">
-      +
-  </button>
+  <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success"> Add </button>
 </div>

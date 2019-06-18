@@ -38,12 +38,10 @@
 
 <div>
     <label>Nom:
-        <input #subcategoryName class="form-control"/>
+        <input #subcategoryName class="form-control"  (keyup.enter)="add(subcategoryName.value, subcategoryLogo.value)"/>
     </label>
     <label>Logo:
-        <input #subcategoryLogo class="form-control"/>
+        <input #subcategoryLogo class="form-control"  (keyup.enter)="add(subcategoryName.value, subcategoryLogo.value)"/>
     </label>
-    <button (click)="add(subcategoryName.value, subcategoryLogo.value)" subcategoryName.value='' subcategoryLogo.value='' class="btn btn-success">
-        +
-    </button>
+    <button (click)="add(subcategoryName.value, subcategoryLogo.value)" subcategoryName.value='' subcategoryLogo.value='' class="btn btn-success"> Add </button>
 </div>

@@ -38,12 +38,11 @@
 
 <div>
     <label>Nom:
-        <input #companyName class="form-control"/>
+        <input #companyName class="form-control" (keyup.enter)="add(companyName.value, companyLogo.value)"/>
     </label>
     <label>Logo:
-        <input #companyLogo class="form-control"/>
+        <input #companyLogo class="form-control" (keyup.enter)="add(companyName.value, companyLogo.value)"/>
     </label>
-    <button (click)="add(companyName.value, companyLogo.value)" companyName.value='' companyLogo.value='' class="btn btn-success">
-        +
-    </button>
+    <button (click)="add(companyName.value, companyLogo.value)" companyName.value='' companyLogo.value='' class="btn btn-success"> Add</button>
+
 </div>

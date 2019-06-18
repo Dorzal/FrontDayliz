@@ -41,17 +41,15 @@
 
 <div>
     <label>Code:
-        <input #promotionCode class="form-control"/>
+        <input #promotionCode class="form-control"  (keyup.enter)="add(premiumCode.value, premiumTime.value, premiumPercent.value)"/>
     </label>
     <label> Durée:
-        <input #promotionTime class="form-control"/>
+        <input #promotionTime class="form-control" (keyup.enter)="add(premiumCode.value, premiumTime.value, premiumPercent.value)"/>
     </label>
     <label>Pourcentage:
-        <input #promotionPercent class="form-control"/>
+        <input #promotionPercent class="form-control" (keyup.enter)="add(premiumCode.value, premiumTime.value, premiumPercent.value)"/>
     </label>
 
-    <button (click)="add(premiumCode.value, premiumTime.value, premiumPercent.value)" premiumCode.value='' premiumTime.value='' premiumPercent.value='' class="btn btn-success">
-        +
-    </button>
+    <button (click)="add(premiumCode.value, premiumTime.value, premiumPercent.value)" premiumCode.value='' premiumTime.value='' premiumPercent.value='' class="btn btn-success"> Add </button>
 </div>
 
