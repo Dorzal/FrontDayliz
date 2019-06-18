@@ -1,0 +1,12 @@
+<div id="wrapper" class="active">  
+  <div id="sidebar-wrapper">
+    <ul id="sidebar_menu" class="sidebar-nav">
+      <tr *ngFor="let category of categories" class="nav flex-column">
+          <li class="nav-item">
+              <a class="nav-link active" >{{category?.name}}</a>
+          </li>
+      </tr>
+    </ul>
+  </div>
+</div>
+
