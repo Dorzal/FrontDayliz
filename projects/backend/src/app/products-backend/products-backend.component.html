@@ -66,8 +66,21 @@
     <label>date:
         <input #productDate class="form-control"/>
     </label>
+    <label>sous-categorie:
+        <input #productSubCategoryId class="form-control" list="browsers"/>
+        <datalist id="browsers">
+            <option *ngFor="let subcategory of subCategories" value="{{subcategory?.id}}">{{subcategory.name}}</option>
+        </datalist>
+    </label>
 
-    <button (click)="add(productName.value, productDescription.value, productPrice.value , productWebsite.value, productPicture.value, productDate.value)" productName.value='' productDescription.value='' productPrice.value='' productWebsite='' productPicture='' productDate='' class="btn btn-success">
+    <label>Entreprise:
+        <input #productCompanyId class="form-control" list="brows"/>
+        <datalist id="brows">
+            <option *ngFor="let company of companies" value="{{company?.id}}">{{company.name}}</option>
+        </datalist>
+    </label>
+
+    <button (click)="add(productName.value, productDescription.value, productPrice.value , productWebsite.value, productPicture.value, productDate.value, productSubCategoryId.value, productCompanyId.value)" productName.value='' productDescription.value='' productPrice.value='' productWebsite='' productPicture='' productDate='' class="btn btn-success">
         +
     </button>
 </div>
