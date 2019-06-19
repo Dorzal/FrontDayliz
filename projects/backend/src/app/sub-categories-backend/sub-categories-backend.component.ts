@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SubCategoriesBackendService } from '../services/sub-categories-backend.service';
 import { SubcategoriesB } from './subcategoriesB';
+import { CategoriesB } from '../categories-backend/categoriesB';
+import { CategoriesBackendService } from '../services/categories-backend.service';
 
 
 
@@ -12,14 +14,20 @@ import { SubcategoriesB } from './subcategoriesB';
 export class SubCategoriesBackendComponent implements OnInit {
 
   subcategories: SubcategoriesB[];
-  constructor(private subCategoriesBackendService: SubCategoriesBackendService) { }
+  categories: CategoriesB[];
+  constructor(private subCategoriesBackendService: SubCategoriesBackendService, private categoriesBackendService: CategoriesBackendService) { }
 
   ngOnInit() {
     this.getSubCategories();
+    this.getCategories();
   }
 
   getSubCategories(): void {
     this.subCategoriesBackendService.getSubCategories().subscribe(subcategories => this.subcategories = subcategories)
+  }
+
+  getCategories(): void {
+    this.categoriesBackendService.getCategories().subscribe(categories => this.categories = categories);
   }
   
   delete(subCategory: SubcategoriesB): void {
@@ -27,8 +35,9 @@ export class SubCategoriesBackendComponent implements OnInit {
     this.subCategoriesBackendService.deleteSubCategory(subCategory).subscribe();
   }
 
-  add(name: string, logo: string): void {
+  add(name: string, logo: string, categoryId:any): void {
     if (!name || !logo) { return;}
-    this.subCategoriesBackendService.addSubCategory({name, logo} as SubcategoriesB).subscribe(subcategory => {this.subcategories.push(subcategory)});
+    categoryId = `/api/categories/${categoryId}`
+    this.subCategoriesBackendService.addSubCategory({name, logo, categoryId} as SubcategoriesB).subscribe(subcategory => {this.subcategories.push(subcategory)});
   }
 }

@@ -41,7 +41,13 @@
     <label>Logo:
         <input #subcategoryLogo class="form-control"/>
     </label>
-    <button (click)="add(subcategoryName.value, subcategoryLogo.value)" subcategoryName.value='' subcategoryLogo.value='' class="btn btn-success">
+    <label>category:
+        <input #subcategoryCategoryId class="form-control" list="browsers"/>
+        <datalist id="browsers">
+            <option *ngFor="let category of categories" value="{{category?.id}}">{{category.name}}</option>
+        </datalist>
+    </label>
+    <button (click)="add(subcategoryName.value, subcategoryLogo.value, subcategoryCategoryId.value)" subcategoryName.value='' subcategoryLogo.value='' class="btn btn-success">
         +
     </button>
 </div>

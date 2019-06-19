@@ -7,4 +7,11 @@ export class ProductsB {
     website: string;
     picture: string;
     date: string;
+    subcategoryId: [
+        string
+    ];
+    companyId: [
+        string
+    ];
+
 }
