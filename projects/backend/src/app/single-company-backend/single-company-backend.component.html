@@ -2,8 +2,8 @@
 
 <div *ngIf="company">
 <h2>{{company.name | uppercase}}</h2>
-<div><span>id: </span> {{ company.id}}</div>
-<div><span>logo: </span> {{ company.logo}}</div>
+<div><span class="details">id</span> : {{ company.id}}</div>
+<div><span class="details">logo</span> : {{ company.logo}}</div>
 <div>
   <label>name:
     <input [(ngModel)]="company.name" placeholder="name" class="form-control"/>

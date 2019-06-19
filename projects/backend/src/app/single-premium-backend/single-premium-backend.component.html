@@ -2,9 +2,9 @@
 
 <div *ngIf="premium">
     <h2>{{premium.name | uppercase}}</h2>
-    <div><span>id: </span> {{ premium.id}}</div>
-    <div><span>prix: </span> {{ premium.price}}</div>
-    <div><span>durée: </span> {{ premium.time}}</div>
+    <div><span class="details">id</span> : {{ premium.id}}</div>
+    <div><span class="details">prix</span> : {{ premium.price}}</div>
+    <div><span class="details">durée</span> : {{ premium.time}}</div>
     <div class="input-group mb-3">
         <label>name:
           <input [(ngModel)]="premium.name" placeholder="name" class="form-control"/>
