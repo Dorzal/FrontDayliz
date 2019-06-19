@@ -42,28 +42,37 @@
 
 <div>
   <label>Email:
-      <input #userEmail class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+      <input #userEmail class="form-control"/>
   </label>
   <label>Role:
-      <input #userRole class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+      <input #userRole class="form-control" list="browsers"/>
+      <datalist id="browsers">
+          <option value="ROLE_USER">
+          <option value="ROLE_ADMIN">
+      </datalist>
   </label>
   <label>password:
-    <input #userPassword class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+    <input #userPassword class="form-control"/>
   </label>
   <label>Anniversaire:
-    <input #userBirthday class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+    <input #userBirthday class="form-control"/>
   </label>
   <label>Avatar:
-    <input #userAvatar class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
-  </label>
-  <label>Creation:
-    <input #userCreation class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+    <input #userAvatar class="form-control"/>
   </label>
   <label>Nom:
-    <input #userLastName class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+    <input #userLastName class="form-control"/>
   </label>
   <label>Prenom:
-    <input #userFirstName class="form-control"  (keyup.enter)="addadd(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)"/>
+    <input #userFirstName class="form-control"/>
   </label>
-  <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success"> Add </button>
+  <label>premium:
+      <input #userPremiumId class="form-control" list="bro"/>
+      <datalist id="bro">
+        <option *ngFor="let premium of premiums" value="{{premium?.id}}">{{premium.name}}</option>
+      </datalist>
+  </label>
+  <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userLastName.value, userFirstName.value, userAvatar.value, userPremiumId.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success">
+      +
+  </button>
 </div>
