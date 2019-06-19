@@ -43,7 +43,11 @@
       <input #userEmail class="form-control"/>
   </label>
   <label>Role:
-      <input #userRole class="form-control"/>
+      <input #userRole class="form-control" list="browsers"/>
+      <datalist id="browsers">
+          <option value="ROLE_USER">
+          <option value="ROLE_ADMIN">
+      </datalist>
   </label>
   <label>password:
     <input #userPassword class="form-control"/>
