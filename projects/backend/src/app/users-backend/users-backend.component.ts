@@ -14,7 +14,7 @@ export class UsersBackendComponent implements OnInit {
   users: UsersB[];
   premiums: PremiumsB[];
   constructor(private usersBackendService: UsersBackendService, private premiumsBackendService: PremiumsBackendService) { }
-
+pageActuel: number = 1;
   ngOnInit() {
     this.getUsers();
     this.getPremiums();

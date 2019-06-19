@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,6 +65,7 @@ const providers = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxPaginationModule,
     AppRoutingModule,
     FormsModule
   ],

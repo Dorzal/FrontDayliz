@@ -31,7 +31,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let premium of premiums">
+      <tr *ngFor="let premium of premiums | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
             
                 <td>{{premium?.id}}</td>
                 <td>{{premium?.name}}</td>
@@ -54,19 +54,19 @@
   </tfoot>
 </table>
 
+<pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>
+
 <div>
     <label>Nom:
-        <input #premiumName class="form-control"/>
+        <input #premiumName class="form-control" (keyup.enter)="add(premiumName.value, premiumPrice.value, premiumTime.value)"/>
     </label>
     <label> prix:
-        <input #premiumPrice class="form-control"/>
+        <input #premiumPrice class="form-control" (keyup.enter)="add(premiumName.value, premiumPrice.value, premiumTime.value)"/>
     </label>
     <label>Durée:
-        <input #premiumTime class="form-control"/>
+        <input #premiumTime class="form-control" (keyup.enter)="add(premiumName.value, premiumPrice.value, premiumTime.value)"/>
     </label>
 
-    <button (click)="add(premiumName.value, premiumPrice.value, premiumTime.value)" premiumName.value='' premiumPrice.value='' premiumTime.value='' class="btn btn-success">
-        +
-    </button>
+    <button (click)="add(premiumName.value, premiumPrice.value, premiumTime.value)" premiumName.value='' premiumPrice.value='' premiumTime.value='' class="btn btn-success"> Add </button>
 </div>
 

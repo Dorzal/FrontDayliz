@@ -16,7 +16,7 @@ export class SubCategoriesBackendComponent implements OnInit {
   subcategories: SubcategoriesB[];
   categories: CategoriesB[];
   constructor(private subCategoriesBackendService: SubCategoriesBackendService, private categoriesBackendService: CategoriesBackendService) { }
-
+pageActuel: number = 1;
   ngOnInit() {
     this.getSubCategories();
     this.getCategories();

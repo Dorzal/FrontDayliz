@@ -11,7 +11,7 @@ export class PromotionsBackendComponent implements OnInit {
 
   promotions: PromotionsB[];
   constructor(private promotionsBackendService: PromotionsBackendService) { }
-
+  pageActuel: number = 1;
   ngOnInit() {
     this.getPromotions();
   }

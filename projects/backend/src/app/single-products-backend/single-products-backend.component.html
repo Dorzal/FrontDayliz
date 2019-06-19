@@ -2,12 +2,12 @@
 
 <div *ngIf="product">
   <h2>{{product.name | uppercase}}</h2>
-  <div><span>id: </span> {{ product.id}}</div>
-  <div><span>description: </span> {{ product.description}}</div>
-  <div><span>price: </span> {{ product.price}}</div>
-  <div><span>url: </span> {{ product.website}}</div>
-  <div><span>Image: </span> {{ product.picture}}</div>
-  <div><span>Date: </span> {{ product.date}}</div>
+  <div><span class="details">id</span> : {{ product.id}}</div>
+  <div><span class="details">description</span> : {{ product.description}}</div>
+  <div><span class="details">price</span> : {{ product.price}}</div>
+  <div><span class="details">url</span> : {{ product.website}}</div>
+  <div><span class="details">Image</span> : {{ product.picture}}</div>
+  <div><span class="details">Date</span> : {{ product.date}}</div>
   <div class="input-group mb-3">
     <label>name:
         <input [(ngModel)]="product.name" placeholder="name" class="form-control"/>
