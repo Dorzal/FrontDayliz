@@ -58,16 +58,19 @@
   <label>Avatar:
     <input #userAvatar class="form-control"/>
   </label>
-  <label>Creation:
-    <input #userCreation class="form-control"/>
-  </label>
   <label>Nom:
     <input #userLastName class="form-control"/>
   </label>
   <label>Prenom:
     <input #userFirstName class="form-control"/>
   </label>
-  <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userAvatar.value, userCreation.value, userLastName.value, userFirstName.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success">
+  <label>premium:
+      <input #userPremiumId class="form-control" list="bro"/>
+      <datalist id="bro">
+        <option *ngFor="let premium of premiums" value="{{premium?.id}}">{{premium.name}}</option>
+      </datalist>
+  </label>
+  <button (click)="add(userEmail.value, userRole.value, userPassword.value, userBirthday.value, userLastName.value, userFirstName.value, userAvatar.value, userPremiumId.value)" userEmail.value='' userRole.value='' userPassword.value='' userBirthday.value='' userBirthday.value='' userAvatar.value='' userCreation.value='' userLastName.value='' userFirstName.value='' class="btn btn-success">
       +
   </button>
 </div>
