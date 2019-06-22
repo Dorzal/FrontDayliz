@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ProductsB } from '../products-backend/productsB';
+import { ProductsB } from '../Product/products-backend/productsB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class ProductsBackendService {
 
-  apiUrl = 'http://51.15.233.25/api/products'
+  apiUrl = 'http://localhost/api/products'
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<ProductsB[]> {

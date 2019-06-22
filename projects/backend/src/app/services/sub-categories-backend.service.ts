@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { SubcategoriesB } from '../sub-categories-backend/subcategoriesB';
+import { SubcategoriesB } from '../SubCategory/sub-categories-backend/subcategoriesB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class SubCategoriesBackendService {
   
-  apiUrl = 'http://51.15.233.25/api/sub_categories'
+  apiUrl = 'http://localhost/api/sub_categories'
   constructor(private http: HttpClient) { }
 
   getSubCategories(): Observable<SubcategoriesB[]> {

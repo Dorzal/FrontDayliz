@@ -1,0 +1,43 @@
+<app-nav></app-nav>
+
+<div *ngIf="category">
+    <h2>{{category.name | uppercase}}</h2>
+    <div><span class="details">id</span> : {{ category.id}}</div>
+    <div><span class="details">logo</span> : {{ category.logo}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="category.name" placeholder="name" class="form-control"/>
+      </label>
+      <label>logo:
+        <input [(ngModel)]="category.logo" placeholder="logo" class="form-control"/>
+      </label>
+    </div>
+    <button (click)="goBack()" class="btn btn-warning">retour</button>
+    <button (click)="save()" class="btn btn-primary">modifier</button>
+</div>
+
+<table class="table table-striped table-bordered" style="width:100%">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Logo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let subcategory of subcategories | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
+                <td>{{subcategory?.id}}</td>
+                <td>{{subcategory?.name}}</td>
+                <td>{{subcategory?.logo}}</td>   
+      </tr>
+  </tbody>
+  <tfoot>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Logo</th>
+      </tr>
+  </tfoot>
+</table>
+
+<pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>

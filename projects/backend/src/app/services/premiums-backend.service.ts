@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { PremiumsB } from '../premiums-backend/premiumsB';
+import { PremiumsB } from '../Premium/premiums-backend/premiumsB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class PremiumsBackendService {
   
-  apiUrl = 'http://51.15.233.25/api/premia'
+  apiUrl = 'http://localhost/api/premia'
   constructor(private http: HttpClient) { }
 
   getPremiums(): Observable<PremiumsB[]> {

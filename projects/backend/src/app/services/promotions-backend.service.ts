@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PromotionsB } from '../promotions-backend/promotionsB';
+import { PromotionsB } from '../Promotion/promotions-backend/promotionsB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class PromotionsBackendService {
 
-  apiUrl = 'http://51.15.233.25/api/promotions'
+  apiUrl = 'http://localhost/api/promotions'
   constructor(private http: HttpClient) { }
 
   getPromotions(): Observable<PromotionsB[]> {

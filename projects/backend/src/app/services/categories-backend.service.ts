@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { CategoriesB } from '../categories-backend/categoriesB';
+import { CategoriesB } from '../Category/categories-backend/categoriesB';
 import { Observable } from 'rxjs';
+import { SubcategoriesB } from '../SubCategory/sub-categories-backend/subcategoriesB';
 
 
 const httpOptions = {
@@ -13,7 +14,7 @@ const httpOptions = {
 })
 export class CategoriesBackendService {
 
-  apiUrl = 'http://51.15.233.25/api/categories'
+  apiUrl = 'http://localhost/api/categories'
   constructor(private http: HttpClient) { }
 
   getCategories (): Observable<CategoriesB[]> {
@@ -39,5 +40,10 @@ export class CategoriesBackendService {
 
   addCategory( category: CategoriesB): Observable<CategoriesB> {
     return this.http.post<CategoriesB>(this.apiUrl, category, httpOptions);
+  }
+
+  getRelation( id: number): Observable<SubcategoriesB[]> {
+    const url = `${this.apiUrl}/${id}/sub_categories`;
+    return this.http.get<SubcategoriesB[]>(url);
   }
 }
