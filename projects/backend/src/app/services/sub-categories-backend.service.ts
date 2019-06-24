@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { SubcategoriesB } from '../SubCategory/sub-categories-backend/subcategoriesB';
+import { ProductsB } from '../Product/products-backend/productsB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -39,5 +40,10 @@ export class SubCategoriesBackendService {
 
   addSubCategory( subcategoriesB: SubcategoriesB): Observable<SubcategoriesB> {
     return this.http.post<SubcategoriesB>(this.apiUrl, subcategoriesB, httpOptions);
+  }
+
+  getRelation(id : number): Observable<ProductsB[]> {
+    const url = `${this.apiUrl}/${id}/products`;
+    return this.http.get<ProductsB[]>(url);
   }
 }

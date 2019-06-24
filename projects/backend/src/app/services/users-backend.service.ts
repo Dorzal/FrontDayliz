@@ -35,8 +35,5 @@ export class UsersBackendService {
 
     return this.http.delete<UsersB>(url, httpOptions);
   }
-
-  addUser( user: UsersB) {
-    return this.http.post<UsersB>(this.apiUrl, user, httpOptions);
-  }
+  
 }

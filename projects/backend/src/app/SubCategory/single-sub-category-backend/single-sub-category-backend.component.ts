@@ -3,6 +3,7 @@ import { SubCategoriesBackendService } from '../../services/sub-categories-backe
 import { ActivatedRoute } from '@angular/router';
 import { SubcategoriesB } from '../sub-categories-backend/subcategoriesB';
 import { Location } from '@angular/common'
+import { ProductsB } from '../../Product/products-backend/productsB';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Location } from '@angular/common'
 })
 export class SingleSubCategoryBackendComponent implements OnInit {
   @Input() subcategory: SubcategoriesB;
+  products: ProductsB[];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,6 +23,7 @@ export class SingleSubCategoryBackendComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSubCategory();
+    this.getRelation();
   }
 
   getSubCategory() : void {
@@ -35,5 +38,10 @@ export class SingleSubCategoryBackendComponent implements OnInit {
   save(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.SubcategoriesBackendService.updateSubCategory(this.subcategory, id ).subscribe(() => this.goBack());
+  }
+
+  getRelation(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.SubcategoriesBackendService.getRelation(id).subscribe(data => this.products = data);
   }
 }

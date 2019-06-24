@@ -6,7 +6,6 @@ export class ProductsB {
     price: string;
     url: string;
     picture: string;
-    date: string;
     showAt: any;
     createdAt: any;
     subcategoryId: [

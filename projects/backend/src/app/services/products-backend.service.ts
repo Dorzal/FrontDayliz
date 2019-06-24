@@ -40,4 +40,5 @@ export class ProductsBackendService {
   addProduct( product: ProductsB): Observable<ProductsB> {
     return this.http.post<ProductsB>(this.apiUrl, product, httpOptions);
   }
+  
 }

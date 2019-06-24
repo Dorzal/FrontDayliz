@@ -11,4 +11,9 @@ export class UsersB {
     premiumId: [
         string
     ];
+    Interest: [];
+    likeProduct: [];
+    Premium: [];
+    commentary: [];
+    token: string;
 }

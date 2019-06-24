@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class NavbarService {
 
-  apiUrl = 'http://51.15.233.25/api/categories'
+  apiUrl = 'http://localhost/api/categories'
   constructor(private http: HttpClient) { }
 
   getCategories (): Observable<Categories[]> {

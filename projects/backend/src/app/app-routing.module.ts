@@ -14,6 +14,7 @@ import { ProductsBackendComponent } from './Product/products-backend/products-ba
 import { SingleProductsBackendComponent } from './Product/single-products-backend/single-products-backend.component';
 import { CategoriesBackendComponent } from './Category/categories-backend/categories-backend.component';
 import { SingleCategoryBackendComponent } from './Category/single-category-backend/single-category-backend.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 const routes: Routes = [
   { path: 'backend/companies', component: CompaniesBackendComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: "detail-product/:id", component: SingleProductsBackendComponent},
   { path: "backend/categories", component: CategoriesBackendComponent},
   { path: "detail-category/:id", component: SingleCategoryBackendComponent},
-  { path: 'backend', redirectTo: 'backend/companies' }
+  { path: 'backend', redirectTo: 'backend/companies' },
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
