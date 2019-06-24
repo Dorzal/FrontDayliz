@@ -12,6 +12,7 @@ import { AlertComponent } from './alert/alert.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor} from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { HomeComponent } from './home/home.component'
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
     NavbarComponent,
     LoginComponent,
     AlertComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
