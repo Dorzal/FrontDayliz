@@ -41,15 +41,21 @@
 
 <div>
     <label>Nom:
-        <input #premiumName class="form-control" (keyup.enter)="add(premiumName.value, premiumPrice.value, premiumTime.value)"/>
+        <input #premiumName class="form-control" />
     </label>
     <label> prix:
-        <input #premiumPrice class="form-control" (keyup.enter)="add(premiumName.value, premiumPrice.value, premiumTime.value)"/>
+        <input #premiumPrice class="form-control" />
     </label>
     <label>Durée:
-        <input #premiumTime class="form-control" (keyup.enter)="add(premiumName.value, premiumPrice.value, premiumTime.value)"/>
+        <input #premiumTime class="form-control"/>
+    </label>
+    <label>Description:
+        <input #premiumDescription class="form-control"/>
+    </label>
+    <label>logo:
+        <input #premiumLogo class="form-control"/>
     </label>
 
-    <button (click)="add(premiumName.value, premiumPrice.value, premiumTime.value)" premiumName.value='' premiumPrice.value='' premiumTime.value='' class="btn btn-success"> Add </button>
+    <button (click)="add(premiumName.value, premiumPrice.value, premiumTime.value, premiumDescription.value, premiumLogo.value)" premiumName.value='' premiumPrice.value='' premiumTime.value='' class="btn btn-success"> Add </button>
 </div>
 

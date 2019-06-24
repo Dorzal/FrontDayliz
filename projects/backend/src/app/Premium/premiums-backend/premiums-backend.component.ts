@@ -27,8 +27,9 @@ export class PremiumsBackendComponent implements OnInit {
     this.premiumsBackendService.deletePremium(premium).subscribe();
   }
 
-  add(name: string, price: string, time: string): void {
+  add(name: string, price: string, time: number, description: string, logo: string): void {
     
-    this.premiumsBackendService.addPremium({name, price, time} as PremiumsB).subscribe(premium => {this.premiums.push(premium)});
+    time = +time;
+    this.premiumsBackendService.addPremium({name, price, time, description, logo} as PremiumsB).subscribe(premium => {this.premiums.push(premium)});
   }
 }

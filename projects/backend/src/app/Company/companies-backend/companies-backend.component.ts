@@ -31,8 +31,8 @@ export class CompaniesBackendComponent implements OnInit {
     this.companiesBackendService.deleteCompany(company).subscribe();
   }
 
-  add(name: string, logo: string): void {
+  add(name: string, logo: string, url: string): void {
     if (!name || !logo) { return;}
-    this.companiesBackendService.addCompany({name, logo} as CompaniesB).subscribe(company => {this.companies.push(company)});
+    this.companiesBackendService.addCompany({name, logo, url} as CompaniesB).subscribe(company => {this.companies.push(company)});
   }
 }

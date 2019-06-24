@@ -38,11 +38,14 @@
 
 <div>
     <label>Nom:
-        <input #companyName class="form-control" (keyup.enter)="add(companyName.value, companyLogo.value)"/>
+        <input #companyName class="form-control"/>
     </label>
     <label>Logo:
-        <input #companyLogo class="form-control" (keyup.enter)="add(companyName.value, companyLogo.value)"/>
+        <input #companyLogo class="form-control" />
     </label>
-    <button (click)="add(companyName.value, companyLogo.value)" companyName.value='' companyLogo.value='' class="btn btn-success"> Add</button>
+    <label>url :
+        <input #companyUrl class="form-control"/>
+    </label>
+    <button (click)="add(companyName.value, companyLogo.value, companyUrl.value)" companyName.value='' companyLogo.value='' class="btn btn-success"> Add</button>
 
 </div>
