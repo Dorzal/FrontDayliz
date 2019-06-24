@@ -8,11 +8,8 @@ export class ProductsB {
     picture: string;
     showAt: any;
     createdAt: any;
-    subcategoryId: [
-        string
-    ];
-    companyId: [
-        string
-    ];
+    subcategory: string;
+    mark: string;
+    promotion: string;
 
 }

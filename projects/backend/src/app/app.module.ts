@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -72,10 +70,8 @@ const providers = [
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    })
+    
+
   ],
   providers,
   bootstrap: [AppComponent]

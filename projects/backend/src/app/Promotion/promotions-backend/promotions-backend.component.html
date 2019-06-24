@@ -7,8 +7,9 @@
       <tr>
           <th>Id</th>
           <th>Code</th>
-          <th>Durée</th>
           <th>Pourcentage</th>
+          <th>Crée le</th>
+          
           <th></th>
           <th></th>
       </tr>
@@ -18,8 +19,9 @@
             
                 <td>{{promotion?.id}}</td>
                 <td>{{promotion?.code}}</td>
-                <td>{{promotion?.time}}</td>
                 <td>{{promotion?.percent}}</td>
+                <td>{{promotion?.createdAt}}</td>
+                
                 <td><a routerLink="/detail-promotion/{{promotion?.id}}"><span class="badge badge-secondary">Editer</span></a></td>
                 <td><button class="btn btn-danger" title="delete promotion" (click)="delete(promotion)">Supprimer</button></td>
             
@@ -29,8 +31,9 @@
       <tr>
         <th>Id</th>
         <th>Code</th>
-        <th>Durée</th>
-        <th>Time</th>
+        <th>pourcentage</th>
+        <th>Crée le</th>
+        
         <th></th>
         <th></th>
       </tr>
@@ -41,15 +44,12 @@
 
 <div>
     <label>Code:
-        <input #promotionCode class="form-control"  (keyup.enter)="add(premiumCode.value, premiumTime.value, premiumPercent.value)"/>
-    </label>
-    <label> Durée:
-        <input #promotionTime class="form-control" (keyup.enter)="add(premiumCode.value, premiumTime.value, premiumPercent.value)"/>
+        <input #promotionCode class="form-control"/>
     </label>
     <label>Pourcentage:
-        <input #promotionPercent class="form-control" (keyup.enter)="add(premiumCode.value, premiumTime.value, premiumPercent.value)"/>
+        <input #promotionPercent class="form-control" />
     </label>
 
-    <button (click)="add(premiumCode.value, premiumTime.value, premiumPercent.value)" premiumCode.value='' premiumTime.value='' premiumPercent.value='' class="btn btn-success"> Add </button>
+    <button (click)="add(promotionCode.value, promotionPercent.value)" promotionCode.value='' promtionPercent.value='' class="btn btn-success"> Add </button>
 </div>
 

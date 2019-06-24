@@ -25,9 +25,9 @@ export class PromotionsBackendComponent implements OnInit {
     this.promotionsBackendService.deletePromotion(promotion).subscribe();
   }
 
-  add(code: string, time: number, percent: number): void {
-    
-    this.promotionsBackendService.addPromotion({code, time, percent} as PromotionsB).subscribe(promotion => {this.promotions.push(promotion)});
+  add(code: string, percent: number): void {
+    percent = +percent;
+    this.promotionsBackendService.addPromotion({code, percent} as PromotionsB).subscribe(promotion => {this.promotions.push(promotion)});
   }
 
 }

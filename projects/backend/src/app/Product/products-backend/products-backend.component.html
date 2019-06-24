@@ -82,7 +82,23 @@
         </datalist>
     </label>
 
-    <button (click)="add(productName.value, productDescription.value, productPrice.value , productWebsite.value, productPicture.value, productDate.value, productSubCategoryId.value, productCompanyId.value)" productName.value='' productDescription.value='' productPrice.value='' productWebsite='' productPicture='' productDate='' class="btn btn-success">
+    <label>promotion:
+            <input #productPromotion class="form-control" list="bro"/>
+            <datalist id="bro">
+                <option *ngFor="let promotion of promotions" value="{{promotion?.id}}">{{promotion.code}}</option>
+            </datalist>
+        </label>
+
+    <button (click)="add(
+        productName.value,
+        productDescription.value,
+        productPrice.value ,
+        productWebsite.value,
+        productPicture.value,
+        productDate.value,
+        productSubCategoryId.value, 
+        productCompanyId.value,
+        productPromotion.value)" productName.value='' productDescription.value='' productPrice.value='' productWebsite='' productPicture='' productDate='' class="btn btn-success">
         +
     </button>
 </div>
