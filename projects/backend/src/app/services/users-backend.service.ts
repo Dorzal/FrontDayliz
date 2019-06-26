@@ -35,5 +35,10 @@ export class UsersBackendService {
 
     return this.http.delete<UsersB>(url, httpOptions);
   }
+
+  register(user: UsersB) {
+    return this.http.post(this.apiUrl, user);
+}
+
   
 }
