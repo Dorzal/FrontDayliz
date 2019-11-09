@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UsersB } from '../users-backend/usersB';
+import { UsersB } from '../User/users-backend/usersB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class UsersBackendService {
 
-  apiUrl = 'http://51.15.233.25/api/users';
+  apiUrl = 'http://localhost/api/users';
   constructor(private http: HttpClient) { }
 
   getUsers (): Observable<UsersB[]> {
@@ -36,7 +36,9 @@ export class UsersBackendService {
     return this.http.delete<UsersB>(url, httpOptions);
   }
 
-  addUser( user: UsersB) {
-    return this.http.post<UsersB>(this.apiUrl, user, httpOptions);
-  }
+  register(user: UsersB) {
+    return this.http.post(this.apiUrl, user);
+}
+
+  
 }

@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CompaniesBackendComponent } from './companies-backend/companies-backend.component';
-import { SingleCompanyBackendComponent } from './single-company-backend/single-company-backend.component';
-import { PremiumsBackendComponent } from './premiums-backend/premiums-backend.component';
-import { SinglePremiumBackendComponent } from './single-premium-backend/single-premium-backend.component';
-import { SubCategoriesBackendComponent } from './sub-categories-backend/sub-categories-backend.component';
-import { SingleSubCategoryBackendComponent } from './single-sub-category-backend/single-sub-category-backend.component';
-import { UsersBackendComponent } from './users-backend/users-backend.component';
-import { SingleUserBackendComponent } from './single-user-backend/single-user-backend.component';
-import { PromotionsBackendComponent } from './promotions-backend/promotions-backend.component';
-import { SinglePromotionsBackendComponent } from './single-promotions-backend/single-promotions-backend.component';
-import { ProductsBackendComponent } from './products-backend/products-backend.component';
-import { SingleProductsBackendComponent } from './single-products-backend/single-products-backend.component';
-import { CategoriesBackendComponent } from './categories-backend/categories-backend.component';
-import { SingleCategoryBackendComponent } from './single-category-backend/single-category-backend.component';
+import { CompaniesBackendComponent } from './Company/companies-backend/companies-backend.component';
+import { SingleCompanyBackendComponent } from './Company/single-company-backend/single-company-backend.component';
+import { PremiumsBackendComponent } from './Premium/premiums-backend/premiums-backend.component';
+import { SinglePremiumBackendComponent } from './Premium/single-premium-backend/single-premium-backend.component';
+import { SubCategoriesBackendComponent } from './SubCategory/sub-categories-backend/sub-categories-backend.component';
+import { SingleSubCategoryBackendComponent } from './SubCategory/single-sub-category-backend/single-sub-category-backend.component';
+import { UsersBackendComponent } from './User/users-backend/users-backend.component';
+import { SingleUserBackendComponent } from './User/single-user-backend/single-user-backend.component';
+import { PromotionsBackendComponent } from './Promotion/promotions-backend/promotions-backend.component';
+import { SinglePromotionsBackendComponent } from './Promotion/single-promotions-backend/single-promotions-backend.component';
+import { ProductsBackendComponent } from './Product/products-backend/products-backend.component';
+import { SingleProductsBackendComponent } from './Product/single-products-backend/single-products-backend.component';
+import { CategoriesBackendComponent } from './Category/categories-backend/categories-backend.component';
+import { SingleCategoryBackendComponent } from './Category/single-category-backend/single-category-backend.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 const routes: Routes = [
   { path: 'backend/companies', component: CompaniesBackendComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: "detail-product/:id", component: SingleProductsBackendComponent},
   { path: "backend/categories", component: CategoriesBackendComponent},
   { path: "detail-category/:id", component: SingleCategoryBackendComponent},
-  { path: 'backend', redirectTo: 'backend/companies' }
+  { path: 'backend', redirectTo: 'backend/companies' },
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

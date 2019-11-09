@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+
+<div *ngIf="company">
+<h2>{{company.name | uppercase}}</h2>
+<div><span class="details">id</span> : {{ company.id}}</div>
+<div><span class="details">logo</span> : {{ company.logo}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="company.name" placeholder="name" class="form-control"/>
+  </label>
+  <label>logo:
+    <input [(ngModel)]="company.logo" placeholder="logo" class="form-control"/>
+  </label>
+</div>
+<button (click)="goBack()" class="btn btn-warning">retour</button>
+<button (click)="save()" class="btn btn-primary">modifier</button>
+</div>
+
+<table class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Url</th>
+            <th>Image</th>
+            <th>Date</th>
+            <th></th>
+            <th></th>
+  
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
+              
+                  <td>{{product?.id}}</td>
+                  <td>{{product?.name}}</td>
+                  <td>{{product?.description}}</td>
+                  <td>{{product?.price}}</td>
+                  <td>{{product?.url}}</td>
+                  <td>{{product?.picture}}</td>
+                  <td>{{product?.createdAt}}</td>
+                  <td><a routerLink="/detail-product/{{product?.id}}"><span class="badge badge-secondary">Editer</span></a></td>
+                  <td><button class="btn btn-danger" title="delete product" (click)="delete(product)">Supprimer</button></td>
+              
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Url</th>
+          <th>Image</th>
+          <th>Date</th>
+          <th></th>
+          <th></th>
+        </tr>
+    </tfoot>
+  </table>
+  
+  <pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>

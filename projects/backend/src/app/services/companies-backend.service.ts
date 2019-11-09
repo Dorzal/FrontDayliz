@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { CompaniesB } from '../companies-backend/companiesB';
+import { CompaniesB } from '../Company/companies-backend/companiesB';
+import { ProductsB } from '../Product/products-backend/productsB';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -13,7 +14,7 @@ const httpOptions = {
 })
 export class CompaniesBackendService {
   
-  apiUrl = 'http://51.15.233.25/api/companies'
+  apiUrl = 'http://localhost/api/marks'
   constructor(private http: HttpClient) { }
 
   getCompanies (): Observable<CompaniesB[]> {
@@ -39,6 +40,11 @@ export class CompaniesBackendService {
 
   addCompany( company: CompaniesB): Observable<CompaniesB> {
     return this.http.post<CompaniesB>(this.apiUrl, company, httpOptions);
+  }
+
+  getRelation( id: number): Observable<ProductsB[]> {
+    const url = `${this.apiUrl}/${id}/products`;
+    return this.http.get<ProductsB[]>(url);
   }
 
   

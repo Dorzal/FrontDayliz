@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+
+<div *ngIf="product">
+  <h2>{{product.name | uppercase}}</h2>
+  <div><span class="details">id</span> : {{ product.id}}</div>
+  <div><span class="details">description</span> : {{ product.description}}</div>
+  <div><span class="details">price</span> : {{ product.price}}</div>
+  <div><span class="details">url</span> : {{ product.url}}</div>
+  <div><span class="details">Image</span> : {{ product.picture}}</div>
+  <div><span class="details">Date</span> : {{ product.date}}</div>
+  <div class="input-group mb-3">
+    <label>name:
+        <input [(ngModel)]="product.name" placeholder="name" class="form-control"/>
+    </label>
+    <label>description:
+      <textarea [(ngModel)]="product.description" placeholder="description" class="form-control" ></textarea>
+    </label>
+    <label>prix:
+      <input [(ngModel)]="product.price" placeholder="price" class="form-control"/>
+    </label>
+    <label>url:
+      <input [(ngModel)]="product.website" placeholder="website" class="form-control"/>
+    </label>
+    <label>name:
+      <input [(ngModel)]="product.picture" placeholder="picture" class="form-control"/>
+    </label>
+    <label>prix:
+      <input [(ngModel)]="product.date" placeholder="date" class="form-control"/>
+    </label>
+  </div>
+  <button (click)="goBack()" class="btn btn-warning">retour</button>
+  <button (click)="save()" class="btn btn-primary">modifier</button>
+</div>
