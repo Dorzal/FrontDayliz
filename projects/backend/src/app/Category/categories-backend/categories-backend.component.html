@@ -13,7 +13,7 @@
       </tr>
   </thead>
   <tbody>
-      <tr *ngFor="let category of categories | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
+      <tr *ngFor="let category of categories">
             
                 <td>{{category?.id}}</td>
                 <td>{{category?.name}}</td>
@@ -34,14 +34,14 @@
   </tfoot>
 </table>
 
-<pagination-controls (pageChange)="pageActuel = $event"></pagination-controls>
-
 <div>
     <label>Nom:
-        <input #categoryName class="form-control" (keyup.enter)="add(categoryName.value, categoryLogo.value)"/>
+        <input #categoryName class="form-control"/>
     </label>
     <label>Logo:
-        <input #categoryLogo class="form-control" (keyup.enter)="add(categoryName.value, categoryLogo.value)"/>
+        <input #categoryLogo class="form-control"/>
     </label>
-    <button (click)="add(categoryName.value, categoryLogo.value)" categoryName.value='' categoryLogo.value='' class="btn btn-success"> Add </button>
+    <button (click)="add(categoryName.value, categoryLogo.value)" categoryName.value='' categoryLogo.value='' class="btn btn-success">
+        +
+    </button>
 </div>

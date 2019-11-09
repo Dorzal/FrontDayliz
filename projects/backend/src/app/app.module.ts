@@ -3,7 +3,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -66,7 +65,6 @@ const providers = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxPaginationModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,

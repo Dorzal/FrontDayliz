@@ -14,10 +14,6 @@ export class CompaniesBackendComponent implements OnInit {
   companies: CompaniesB[];
   constructor(private companiesBackendService: CompaniesBackendService) { }
 
-  pageActuel: number = 1;
-  
-
-
   ngOnInit() {
     this.getConpanies();
   }

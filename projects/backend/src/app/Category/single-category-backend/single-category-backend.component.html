@@ -2,8 +2,8 @@
 
 <div *ngIf="category">
     <h2>{{category.name | uppercase}}</h2>
-    <div><span class="details">id</span> : {{ category.id}}</div>
-    <div><span class="details">logo</span> : {{ category.logo}}</div>
+    <div><span>id: </span> {{ category.id}}</div>
+    <div><span>logo: </span> {{ category.logo}}</div>
     <div>
       <label>name:
         <input [(ngModel)]="category.name" placeholder="name" class="form-control"/>

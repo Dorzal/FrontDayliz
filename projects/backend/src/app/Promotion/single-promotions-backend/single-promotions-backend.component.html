@@ -2,9 +2,9 @@
 
 <div *ngIf="promotion">
   <h2>{{promotion.code | uppercase}}</h2>
-  <div><span class="details">id</span> : {{ promotion.id}}</div>
-  <div><span class="details">durée</span> : {{ promotion.time}}</div>
-  <div><span class="details">percent</span> : {{ promotion.percent}}</div>
+  <div><span>id: </span> {{ promotion.id}}</div>
+  <div><span>durée: </span> {{ promotion.time}}</div>
+  <div><span>percent: </span> {{ promotion.percent}}</div>
   <div class="input-group mb-3">
       <label>code:
         <input [(ngModel)]="promotion.code" placeholder="code" class="form-control"/>
