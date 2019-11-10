@@ -1,8 +1,11 @@
 export class SubcategoriesB {
-    'id': number;
-    'name': string;
-    'logo': string;
-    'category': [
+    id: number;
+    name: string;
+    logo: string;
+    category: [
         string
-    ]
+    ];
+    product: [
+        string
+    ];
 }

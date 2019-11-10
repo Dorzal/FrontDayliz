@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class UsersBackendService {
 
-  apiUrl = 'http://localhost/api/users';
+  apiUrl = 'http://localhost:80/api/users';
   constructor(private http: HttpClient) { }
 
   getUsers (): Observable<UsersB[]> {

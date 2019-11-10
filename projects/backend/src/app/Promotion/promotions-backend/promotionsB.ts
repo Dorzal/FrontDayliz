@@ -3,4 +3,5 @@ export class PromotionsB {
     code: string;
     percent: number;
     createdAt: any; 
+    product: string;
 }

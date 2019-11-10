@@ -1,8 +1,11 @@
 export class PremiumsB {
     id: number;
     name: string;
-    price: string;
     time: number;
+    price: string;
     description: string;
     logo: string;
+    users: [
+        string
+    ];
 }
