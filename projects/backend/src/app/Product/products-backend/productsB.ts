@@ -1,15 +1,28 @@
 export class ProductsB {
-
     id: number;
     name: string;
-    description: string;
     price: string;
-    url: string;
-    picture: string;
     showAt: any;
     createdAt: any;
-    subcategory: string;
-    mark: string;
-    promotion: string;
+    description: string;
+    picture: string;
+    url: string;
+    subcategory: [
+        string
+    ];
+    mark: [
+        string
+    ];
+    promotion: [
+        string
+    ];
+    users: [
+        string
+    ];
+    commentaires: [
+        string
+
+    ];
+    
 
 }

@@ -51,7 +51,8 @@ export class ProductsBackendComponent implements OnInit {
     this.products = this.products.filter(p => p !== product);
     this.productsBackendService.deleteProduct(product).subscribe();
   }
-
+  
+  /*
   add(name: string, description: string, price: string, url: string, picture: string, showAt: any, subcategory:string, mark:string, promotion: string): void {
     subcategory = `/api/sub_categories/${subcategory}`;
     mark = `/api/marks/${mark}`;
@@ -61,4 +62,5 @@ export class ProductsBackendComponent implements OnInit {
     }
     this.productsBackendService.addProduct({name, description, price, url, picture, showAt, subcategory, mark} as ProductsB).subscribe(product => {this.products.push(product)});
   }
+  */
 }

@@ -1,19 +1,29 @@
 export class UsersB {
     id: number;
     email: string;
-    roles: any;
-    password: string;
-    birthday: any;
-    avatar: string;
-    lastName: string;
-    firstName: string;
-    createdAt: any;
-    premiumId: [
+    roles: [
         string
     ];
-    Interest: [];
-    likeProduct: [];
-    Premium: [];
-    commentary: [];
+    firstName: string;
+    lastName: string;
+    createdAt: any;
+    avatar: string;
+    birthday: any;
+    history: [
+        string
+    ];
+    interest:[
+        { name : string; }
+    ];
+    likeProduct: [
+        { name : string; }
+    ];
+    premium: [
+        { name : string; }
+    ];
+    commentary: [
+        { content : string; }
+    ];
     token: string;
+
 }
