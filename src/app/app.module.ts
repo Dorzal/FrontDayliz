@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { BackendModule } from '../../projects/backend/src/app/app.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './alert/alert.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -19,7 +18,6 @@ import { RegisterComponent } from './register/register.component'
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     LoginComponent,
     AlertComponent,
     HomeComponent,

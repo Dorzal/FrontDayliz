@@ -15,10 +15,24 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
+        <label for="birthday">Birthday</label>
+        <input type="date" formControlName="birthday" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.birthday.errors }" />
+        <div *ngIf="submitted && f.birthday.errors" class="invalid-feedback">
+            <div *ngIf="f.birthday.errors.required">Birthday is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="avatar">Avatar</label>
+        <input type="file" formControlName="avatar" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.avatar.errors }" />
+        <div *ngIf="submitted && f.avatar.errors" class="invalid-feedback">
+            <div *ngIf="f.avatar.errors.required">Avatar is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email obligatoire</div>
         </div>
     </div>
     <div class="form-group">

@@ -37,7 +37,8 @@ export class UsersBackendService {
   }
 
   register(user: UsersB) {
-    return this.http.post(this.apiUrl, user);
+    const url = `${this.apiUrl}/register`;
+    return this.http.post(url, user);
 }
 
   
