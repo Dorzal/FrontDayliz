@@ -1,14 +1,18 @@
-<p>
-  interest works!
-</p>
+<h1>
+  Choisissez vos centre d'intérêts
+</h1>
+  
 
-<form>
+
   <ul *ngFor= "let category of categories">
     {{ category.name}}
     <li *ngFor= "let sub of category.subCategories; let i = index">
-        {{ category.subCategories[i].name }}
+        <div>
+          <input #interest type="checkbox" id="{{ category.subCategories[i].name }}" name="{{ category.subCategories[i].name }}" value="/api/sub_categories/{{ category.subCategories[i].id }}">
+          <label for="{{ category.subCategories[i].name }}">{{ category.subCategories[i].name }}</label>
+        </div>
     </li>
   </ul>
-  <input type="submit" value="Subscribe!">
-</form>
+  <button (click)="patch(interest.value)" class="btn btn-success"> Add </button>
+
 

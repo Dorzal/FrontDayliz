@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UsersB } from '../User/users-backend/usersB';
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -13,7 +16,7 @@ const httpOptions = {
 export class UsersBackendService {
 
   apiUrl = 'http://localhost:80/api/users';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private helper: JwtHelperService, private auth: AuthenticationService) { }
 
   getUsers (): Observable<UsersB[]> {
     return this.http.get<UsersB[]>(this.apiUrl);
@@ -39,7 +42,6 @@ export class UsersBackendService {
   register(user: UsersB) {
     const url = `${this.apiUrl}/register`;
     return this.http.post(url, user);
-}
-
+  }
   
 }
