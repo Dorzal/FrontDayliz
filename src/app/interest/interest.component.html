@@ -2,13 +2,13 @@
   interest works!
 </p>
 
-
-<form >
-  <div *ngFor="let subcategory of subcategories">
-    <input type="checkbox" id="{{ subcategory?.name}}" name="{{ subcategory?.name}}" value="/api/sub_categories/{{subcategory?.id}}">
-    <label for="{{subcategory?.name}}">{{subcategory?.name}}  </label>
-  </div>
+<form>
+  <ul *ngFor= "let category of categories">
+    {{ category.name}}
+    <li *ngFor= "let sub of category.subCategories; let i = index">
+        {{ category.subCategories[i].name }}
+    </li>
+  </ul>
   <input type="submit" value="Subscribe!">
 </form>
-
 

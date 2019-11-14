@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SubCategoriesBackendService } from 'projects/backend/src/app/services/sub-categories-backend.service';
-import { SubcategoriesB } from 'projects/backend/src/app/SubCategory/sub-categories-backend/subcategoriesB';
+import { CategoriesB } from 'projects/backend/src/app/Category/categories-backend/categoriesB';
+import { CategoriesBackendService } from 'projects/backend/src/app/services/categories-backend.service';
 
 @Component({
   selector: 'app-interest',
@@ -8,16 +8,16 @@ import { SubcategoriesB } from 'projects/backend/src/app/SubCategory/sub-categor
   styleUrls: ['./interest.component.scss']
 })
 export class InterestComponent implements OnInit {
-  subcategories: SubcategoriesB[];
+  categories: CategoriesB[];
 
-  constructor(private subCategoriesBackendService: SubCategoriesBackendService) { }
+  constructor(private CategoriesBackendService: CategoriesBackendService) { }
 
   ngOnInit() {
     this.getSubCategories();
   }
 
   getSubCategories(): void {
-    this.subCategoriesBackendService.getSubCategories().subscribe(subcategories => this.subcategories = subcategories)
+    this.CategoriesBackendService.getCategories().subscribe(categories => this.categories = categories)
   }
 
 }

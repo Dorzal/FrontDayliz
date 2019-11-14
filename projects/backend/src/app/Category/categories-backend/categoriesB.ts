@@ -3,7 +3,10 @@ export class CategoriesB {
     name: string;
     logo: string;
     subCategories: [
-        string
+        { 
+            id : number;
+            name : string; 
+        }
     ];
         
 }
