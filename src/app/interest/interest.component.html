@@ -1,3 +1,14 @@
 <p>
   interest works!
 </p>
+
+
+<form >
+  <div *ngFor="let subcategory of subcategories">
+    <input type="checkbox" id="{{ subcategory?.name}}" name="{{ subcategory?.name}}" value="/api/sub_categories/{{subcategory?.id}}">
+    <label for="{{subcategory?.name}}">{{subcategory?.name}}  </label>
+  </div>
+  <input type="submit" value="Subscribe!">
+</form>
+
+

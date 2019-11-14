@@ -5,6 +5,7 @@ import { AuthGuard } from './guards';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { InterestComponent } from './interest/interest.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
     loadChildren: '../../projects/backend/src/app/app.module#BackendModule'
   },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent},
+  { path: 'register', component: RegisterComponent },
+  { path: 'interest', component: InterestComponent },
   { path: '**', redirectTo: '' }
 ];
 
