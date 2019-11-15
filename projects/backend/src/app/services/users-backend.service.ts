@@ -16,7 +16,7 @@ const httpOptions = {
 export class UsersBackendService {
 
   apiUrl = 'http://localhost:80/api/users';
-  constructor(private http: HttpClient, private helper: JwtHelperService, private auth: AuthenticationService) { }
+  constructor(private http: HttpClient, private auth: AuthenticationService) { }
 
   getUsers (): Observable<UsersB[]> {
     return this.http.get<UsersB[]>(this.apiUrl);
@@ -42,6 +42,14 @@ export class UsersBackendService {
   register(user: UsersB) {
     const url = `${this.apiUrl}/register`;
     return this.http.post(url, user);
+  }
+
+  know() {
+    const token = this.auth.currentUserValue['token'];
+    const helper = new JwtHelperService();
+    const decode = helper.decodeToken(token);
+    const url = `${this.apiUrl}/search`;
+    return this.http.post(url, {"email" : decode['username']});
   }
   
 }
