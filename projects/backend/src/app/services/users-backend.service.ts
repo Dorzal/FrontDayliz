@@ -50,7 +50,8 @@ export class UsersBackendService {
     const helper = new JwtHelperService();
     const decode = helper.decodeToken(token);
     const url = `${this.apiUrl}/search`;
-    return this.http.post(url, {"email" : decode['username']});
+    var test = this.http.post(url, {"email" : decode['username']});
+    console.log(test);
   }
   
 }
