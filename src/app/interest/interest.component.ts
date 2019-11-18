@@ -32,7 +32,13 @@ export class InterestComponent implements OnInit {
 
   onToggle(sub : any) {
     
-    this.selectedValues.push(sub);
+    if(this.selectedValues.find(data => data.id == sub.id) == null){
+      this.selectedValues.push(sub);
+    }else{
+      this.selectedValues = this.selectedValues.filter(s => sub.id != s.id)
+    }
+    console.log(this.selectedValues);
+    
   }
 
 
