@@ -50,8 +50,18 @@ export class UsersBackendService {
     const helper = new JwtHelperService();
     const decode = helper.decodeToken(token);
     const url = `${this.apiUrl}/search`;
-    var test = this.http.post(url, {"email" : decode['username']});
-    console.log(test);
+    return this.http.post(url, {"email" : decode['username']}).toPromise();
+  }
+
+
+  patchInterest(interest: Array<string>) {
+    var u = JSON.stringify({interest : interest});
+    console.log(u);
+    this.know().then(data => {
+      const url = `${this.apiUrl}/${data['id']}`;
+      console.log(url);
+      this.http.patch(url, u, httpOptions).subscribe();
+    })
   }
   
 }

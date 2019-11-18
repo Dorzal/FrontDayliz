@@ -3,16 +3,15 @@
 </h1>
   
 
-
   <ul *ngFor= "let category of categories">
     {{ category.name}}
     <li *ngFor= "let sub of category.subCategories; let i = index">
         <div>
-          <input #interest type="checkbox" id="{{ category.subCategories[i].name }}" name="{{ category.subCategories[i].name }}" value="/api/sub_categories/{{ category.subCategories[i].id }}">
-          <label for="{{ category.subCategories[i].name }}">{{ category.subCategories[i].name }}</label>
+          <input (change)="onToggle(sub)" type="checkbox" id="{{ sub.name }}" name="{{ sub.name }}" value="/api/sub_categories/{{ sub.id }}">
+          <label for="{{ sub.name }}">{{ sub.name }}</label>
         </div>
     </li>
   </ul>
-  <button (click)="patch(interest.value)" class="btn btn-success"> Add </button>
+  <button (click)="patchInterest()" class="btn btn-success"> Add </button>
 
 
