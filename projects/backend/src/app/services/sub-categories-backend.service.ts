@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { environment } from '../../../../../src/environments/environment';
 import { Observable, of } from 'rxjs';
 import { SubcategoriesB } from '../SubCategory/sub-categories-backend/subcategoriesB';
 import { ProductsB } from '../Product/products-backend/productsB';
@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class SubCategoriesBackendService {
   
-  apiUrl = 'http://localhost/api/sub_categories'
+  apiUrl = `${environment.rootUrl}/api/sub_categories`
   constructor(private http: HttpClient) { }
 
   getSubCategories(): Observable<SubcategoriesB[]> {

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { CompaniesB } from '../Company/companies-backend/companiesB';
 import { ProductsB } from '../Product/products-backend/productsB';
+import { environment } from '../../../../../src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class CompaniesBackendService {
   
-  apiUrl = 'http://localhost/api/marks'
+  apiUrl =  `${environment.rootUrl}/api/marks`
   constructor(private http: HttpClient) { }
 
   getCompanies (): Observable<CompaniesB[]> {

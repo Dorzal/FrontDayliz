@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { UsersB } from '../User/users-backend/usersB';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { environment } from '../../../../../src/environments/environment';
 
 
 const httpOptions = {
@@ -15,7 +16,7 @@ const httpOptions = {
 })
 export class UsersBackendService {
 
-  apiUrl = 'http://localhost:80/api/users';
+  apiUrl = `${environment.rootUrl}/api/users`;
   constructor(private http: HttpClient, private auth: AuthenticationService) { }
 
   getUsers (): Observable<UsersB[]> {

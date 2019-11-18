@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { environment } from '../../../../../src/environments/environment';
 import { Observable, of } from 'rxjs';
 import { PremiumsB } from '../Premium/premiums-backend/premiumsB';
 
@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class PremiumsBackendService {
   
-  apiUrl = 'http://localhost/api/premia'
+  apiUrl = `${environment.rootUrl}/api/premia`
   constructor(private http: HttpClient) { }
 
   getPremiums(): Observable<PremiumsB[]> {

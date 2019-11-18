@@ -3,6 +3,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { CategoriesB } from '../Category/categories-backend/categoriesB';
 import { Observable } from 'rxjs';
 import { SubcategoriesB } from '../SubCategory/sub-categories-backend/subcategoriesB';
+import { environment } from '../../../../../src/environments/environment';
 
 
 const httpOptions = {
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class CategoriesBackendService {
 
-  apiUrl = 'http://localhost/api/categories'
+  apiUrl = `${environment.rootUrl}/api/categories`
   constructor(private http: HttpClient) { }
 
   getCategories (): Observable<CategoriesB[]> {

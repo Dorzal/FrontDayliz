@@ -13,7 +13,7 @@ import { JwtInterceptor} from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { InterestComponent } from './interest/interest.component'
+import { InterestComponent } from './interest/interest.component';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { InterestComponent } from './interest/interest.component'
     AlertComponent,
     HomeComponent,
     RegisterComponent,
-    InterestComponent
+    InterestComponent,
   ],
   imports: [
     BrowserModule,

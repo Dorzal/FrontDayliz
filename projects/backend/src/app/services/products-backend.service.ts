@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { environment } from '../../../../../src/environments/environment';
 import { Observable } from 'rxjs';
 import { ProductsB } from '../Product/products-backend/productsB';
 
@@ -13,7 +14,7 @@ const httpOptions = {
 })
 export class ProductsBackendService {
 
-  apiUrl = 'http://localhost/api/products'
+  apiUrl = `${environment.rootUrl}/api/products`
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<ProductsB[]> {
