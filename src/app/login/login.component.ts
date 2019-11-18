@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 
 import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
+import { UsersBackendService } from 'projects/backend/src/app/services/users-backend.service';
 
 @Component({templateUrl: 'login.component.html'})
 export class LoginComponent implements OnInit {
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private userBackendService: UsersBackendService
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
@@ -52,7 +54,13 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(['backend']);
+                    this.userBackendService.checkInterest().then((data)=>{data.subscribe((datas: Array<object>) => {
+                        if (datas.length == 0 ){
+                            this.router.navigate(['interest']);
+                        }else {
+                            this.router.navigate(['backend']);
+                        }
+                    })});  
                 },
                 error => {
                     this.alertService.error(error);

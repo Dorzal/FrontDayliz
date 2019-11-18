@@ -5,6 +5,7 @@ import { UsersB } from '../User/users-backend/usersB';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { environment } from '../../../../../src/environments/environment';
+import { async } from 'q';
 
 
 const httpOptions = {
@@ -62,6 +63,14 @@ export class UsersBackendService {
       console.log(url);
       this.http.patch(url, u, httpOptions).subscribe();
     })
+  }
+
+  async checkInterest() {
+    
+    let user = await this.know();
+    const url = `${this.apiUrl}/${user['id']}/interests`;
+    return await this.http.get(url);
+
   }
   
 }

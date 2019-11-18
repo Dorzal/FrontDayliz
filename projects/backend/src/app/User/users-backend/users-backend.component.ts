@@ -14,6 +14,7 @@ export class UsersBackendComponent implements OnInit {
 pageActuel: number = 1;
   ngOnInit() {
     this.getUsers();
+    this.check();
   }
 
   getUsers(): void {
@@ -23,6 +24,10 @@ pageActuel: number = 1;
   delete(user: UsersB): void {
     this.users = this.users.filter(u => u !== user);
     this.usersBackendService.deleteUser(user).subscribe();
+  }
+
+  check() {
+    this.usersBackendService.checkInterest();
   }
 
 }
