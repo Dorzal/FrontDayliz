@@ -52,15 +52,15 @@ export class ProductsBackendComponent implements OnInit {
     this.productsBackendService.deleteProduct(product).subscribe();
   }
   
-  /*
-  add(name: string, description: string, price: string, url: string, picture: string, showAt: any, subcategory:string, mark:string, promotion: string): void {
+  
+  add(name:string, description: string, price: string, url: string, picture: string, showAt: string,   subcategory:any, mark:any, promotion: any): void {
     subcategory = `/api/sub_categories/${subcategory}`;
     mark = `/api/marks/${mark}`;
     promotion = `/api/promotions/${promotion}`;
     if(showAt.length == 0) {
       showAt = null;
     }
-    this.productsBackendService.addProduct({name, description, price, url, picture, showAt, subcategory, mark} as ProductsB).subscribe(product => {this.products.push(product)});
+    this.productsBackendService.addProduct({name, price, showAt,description, picture, url, subcategory, mark, promotion} as ProductsB).subscribe(product => {this.products.push(product)});
   }
-  */
+  
 }

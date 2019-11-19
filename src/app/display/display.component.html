@@ -1,4 +1,4 @@
-<p>display works!</p>
+<button  class="btn btn-primary">Mon bouquet</button>
 
 
 <ul *ngFor= "let category of categories">
@@ -9,8 +9,8 @@
 </ul>
 <div *ngIf="product">
     <h2>{{product?.name}}</h2>
-    {{product?.description}}
-    {{product?.price}}
-    {{product?.url}}
-    {{product?.picture}}
+    <p>{{product?.description}}</p>
+    <p>{{product?.price}}</p>
+    <p>{{product?.url}}</p>
+    <p>{{product?.picture}}</p> 
 </div>  

@@ -6,6 +6,8 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { environment } from '../../../../../src/environments/environment';
 import { async } from 'q';
+import { ProductsB } from '../Product/products-backend/productsB';
+import { formatDate } from '@angular/common';
 
 
 const httpOptions = {
@@ -54,6 +56,14 @@ export class UsersBackendService {
     return this.http.post(url, {"email" : decode['username']}).toPromise();
   }
 
+  knowRole() {
+    const token = this.auth.currentUserValue['token'];
+    const helper = new JwtHelperService();
+    const decode = helper.decodeToken(token);
+    const url = `${this.apiUrl}/search`;
+    return this.http.post(url, {"email" : decode['role']}).toPromise();
+  }
+
 
   patchInterest(interest: Array<string>) {
     var u = JSON.stringify({interest : interest});
@@ -79,6 +89,12 @@ export class UsersBackendService {
     return this.http.get<UsersB[]>(url);
   }
 
-  
-  
+  async getUserSubCategoryProducts(idInterest : number) {
+    let idUser =  await this.know();
+    var day = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+    const url = `${this.apiUrl}/${idUser}/interests/${idInterest}/products?showAt=${day}`;
+    return this.http.get<ProductsB>(url);
+  }
+
+
 }

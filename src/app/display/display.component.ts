@@ -17,12 +17,17 @@ export class DisplayComponent implements OnInit {
   interest : Array<object>= [];
   categories : CategoriesB[];
   product : ProductsB;
+  response : [];
+  idInterest;
   constructor(
     private CategoriesService: CategoriesBackendService, 
-    private subCategoriesBackendService : SubCategoriesBackendService,) { }
+    private subCategoriesBackendService : SubCategoriesBackendService,
+    private userBackendService : UsersBackendService) { }
 
   ngOnInit() {
     this.getSubcategories();
+    this.getBouquet();
+    
 
   }
 
@@ -30,11 +35,19 @@ export class DisplayComponent implements OnInit {
     this.subCategoriesBackendService.getSubCategoryProducts(id).subscribe(data => {this.product = data[0]});
   }
 
-  /*
-  getInterests() {
-    this.userBackendService.getInterests().then((data)=>{data.subscribe((datas: Array<object>)=>{this.interest = datas})})
+  getBouquet() {
+    
+    this.userBackendService.getInterests().then((data)=>{data.subscribe(data => { 
+    return this.idInterest = data.map((interest)=>{return interest.id})})});
+    
   }
-  */
+
+  
+  getInterests() {
+    console.log
+    // this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((datas: Array<object>)=>{this.interest = datas})})
+  }
+  
 
   getSubcategories(){
     this.CategoriesService.getCategories().subscribe(categories => this.categories = categories)

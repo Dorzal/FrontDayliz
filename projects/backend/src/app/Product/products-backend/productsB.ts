@@ -2,8 +2,8 @@ export class ProductsB {
     id: number;
     name: string;
     price: string;
-    showAt: any;
-    createdAt: any;
+    showAt: string;
+    createdAt: string;
     description: string;
     picture: string;
     url: string;
