@@ -72,5 +72,13 @@ export class UsersBackendService {
     return await this.http.get(url);
 
   }
+
+  async getInterests() {
+    let user =  await this.know();
+    const url = `${this.apiUrl}/${user['id']}/interests`;
+    return this.http.get<UsersB[]>(url);
+  }
+
+  
   
 }

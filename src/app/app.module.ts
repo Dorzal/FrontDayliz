@@ -14,6 +14,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { InterestComponent } from './interest/interest.component';
+import { DisplayComponent } from './display/display.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { InterestComponent } from './interest/interest.component';
     HomeComponent,
     RegisterComponent,
     InterestComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,

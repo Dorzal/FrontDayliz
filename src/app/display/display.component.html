@@ -1,0 +1,16 @@
+<p>display works!</p>
+
+
+<ul *ngFor= "let category of categories">
+    {{ category.name}}
+    <li *ngFor= "let sub of category.subCategories; let i = index">
+        <button (click)="getSubProducts(sub.id)" class="btn btn-primary">{{ sub?.name}}</button>
+    </li>
+</ul>
+<div *ngIf="product">
+    <h2>{{product?.name}}</h2>
+    {{product?.description}}
+    {{product?.price}}
+    {{product?.url}}
+    {{product?.picture}}
+</div>  

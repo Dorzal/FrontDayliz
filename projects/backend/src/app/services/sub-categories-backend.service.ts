@@ -4,6 +4,7 @@ import { environment } from '../../../../../src/environments/environment';
 import { Observable, of } from 'rxjs';
 import { SubcategoriesB } from '../SubCategory/sub-categories-backend/subcategoriesB';
 import { ProductsB } from '../Product/products-backend/productsB';
+import {formatDate} from '@angular/common';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json ', 'Accept': 'application/json'})
@@ -24,6 +25,13 @@ export class SubCategoriesBackendService {
   getSubCategory(id: number): Observable<SubcategoriesB> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.get<SubcategoriesB>(url);
+  }
+  
+  getSubCategoryProducts(id: number) : Observable<ProductsB> {
+    var day = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+    const url = `${this.apiUrl}/${id}/products?showAt=${day}`;
+    console.log(url);
+    return this.http.get<ProductsB>(url);
   }
 
   updateSubCategory(subcategoriesB: SubcategoriesB, id) : Observable<any> {

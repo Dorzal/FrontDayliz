@@ -18,10 +18,10 @@ export class InterestComponent implements OnInit {
   constructor(private CategoriesBackendService: CategoriesBackendService, private AuthenticationService : AuthenticationService, private UserBackendService: UsersBackendService) { }
 
   ngOnInit() {
-    this.getSubCategories();
+    this.getCategories();
   }
 
-  getSubCategories(): void {
+  getCategories(): void {
     this.CategoriesBackendService.getCategories().subscribe(categories => this.categories = categories)
   }
 
