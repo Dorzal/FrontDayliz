@@ -55,10 +55,16 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.userBackendService.checkInterest().then((data)=>{data.subscribe((datas: Array<object>) => {
-                        if (datas.length == 0 ){
-                            this.router.navigate(['interest']);
-                        }else {
+                        var role = this.userBackendService.knowRole();
+                        if(role[0] == "ROLE_ADMIN")
+                        {
                             this.router.navigate(['backend']);
+                        }else {
+                            if (datas.length == 0 ){
+                                this.router.navigate(['interest']);
+                            }else {
+                                this.router.navigate(['display']);
+                            }
                         }
                     })});  
                 },

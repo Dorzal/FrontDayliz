@@ -60,8 +60,7 @@ export class UsersBackendService {
     const token = this.auth.currentUserValue['token'];
     const helper = new JwtHelperService();
     const decode = helper.decodeToken(token);
-    const url = `${this.apiUrl}/search`;
-    return this.http.post(url, {"email" : decode['role']}).toPromise();
+    return decode["roles"]
   }
 
 

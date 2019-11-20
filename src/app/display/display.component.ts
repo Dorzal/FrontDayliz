@@ -26,8 +26,6 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit() {
     this.getSubcategories();
-    this.getBouquet();
-    
 
   }
 
@@ -52,5 +50,6 @@ export class DisplayComponent implements OnInit {
   getSubcategories(){
     this.CategoriesService.getCategories().subscribe(categories => this.categories = categories)
   }
+
 
 }
