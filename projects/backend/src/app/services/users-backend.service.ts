@@ -95,4 +95,11 @@ export class UsersBackendService {
   }
 
 
+  async getProfile(){
+    let idUser =  await this.know();
+    const url = `${this.apiUrl}/${idUser['id']}`;
+    return this.http.get<UsersB>(url);
+  }
+
+
 }

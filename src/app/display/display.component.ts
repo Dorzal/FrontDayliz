@@ -40,12 +40,11 @@ export class DisplayComponent implements OnInit {
   
 
   getSubcategories(){
-    this.CategoriesService.getCategories().subscribe(categories => this.categories = categories)
+    this.CategoriesService.getCategories().subscribe(categories => this.categories = categories);
   }
 
   getInterests() {
-    this.product = null;
-    this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)})
+    this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)});
   }
 
 

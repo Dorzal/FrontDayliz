@@ -4,6 +4,7 @@ import { CategoriesBackendService } from 'projects/backend/src/app/services/cate
 import { AuthenticationService } from '../services/authentication.service';
 import { UsersBackendService } from 'projects/backend/src/app/services/users-backend.service';
 import { UsersB } from 'projects/backend/src/app/User/users-backend/usersB';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class InterestComponent implements OnInit {
   selectedValues: {name: string, id: number}[] = [];
   @Output() toggle = new EventEmitter<any[]>();
   categories: CategoriesB[];
-  constructor(private CategoriesBackendService: CategoriesBackendService, private AuthenticationService : AuthenticationService, private UserBackendService: UsersBackendService) { }
+  constructor(private router :Router ,private CategoriesBackendService: CategoriesBackendService, private AuthenticationService : AuthenticationService, private UserBackendService: UsersBackendService) { }
 
   ngOnInit() {
     this.getCategories();
@@ -28,6 +29,7 @@ export class InterestComponent implements OnInit {
   patchInterest(): void {
     let interest = this.selectedValues.map(s => `/api/sub_categories/${s.id}`)
     this.UserBackendService.patchInterest(interest);
+    this.router.navigate(['/display']);
   }
 
   onToggle(sub : any) {

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { InterestComponent } from './interest/interest.component';
 import { DisplayComponent } from './display/display.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'interest', component: InterestComponent },
   { path: 'display', component: DisplayComponent },
+  { path: 'profil', component: ProfilComponent},
   { path: '**', redirectTo: '' }
 ];
 

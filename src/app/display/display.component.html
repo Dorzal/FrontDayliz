@@ -15,7 +15,7 @@
     <p>{{product?.picture}}</p> 
 </div>  
 
-<div *ngIf="!product">
+<div *ngIf="product">
     <ul *ngFor= "let prod of products" class="nav flex-column">
 
         <p style="color : red">{{ prod.name}}</p>

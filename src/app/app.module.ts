@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { InterestComponent } from './interest/interest.component';
 import { DisplayComponent } from './display/display.component';
+import { ProfilComponent } from './profil/profil.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { DisplayComponent } from './display/display.component';
     RegisterComponent,
     InterestComponent,
     DisplayComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,
