@@ -14,7 +14,7 @@ import { ProductsB } from 'projects/backend/src/app/Product/products-backend/pro
   styleUrls: ['./display.component.scss']
 })
 export class DisplayComponent implements OnInit {
-  interest : Array<object>= [];
+  products : Array<object>= [];
   categories : CategoriesB[];
   product : ProductsB;
   response : [];
@@ -26,29 +26,25 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit() {
     this.getSubcategories();
-
+    this.getInterests();
   }
 
   getSubProducts(id): void {
     this.subCategoriesBackendService.getSubCategoryProducts(id).subscribe(data => {this.product = data[0]});
   }
 
-  getBouquet() {
-    
-    this.userBackendService.getInterests().then((data)=>{data.subscribe(data => { 
-    return this.idInterest = data.map((interest)=>{return interest.id})})});
-    
-  }
-
   
-  getInterests() {
-    console.log
+  //getInterests() {
     // this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((datas: Array<object>)=>{this.interest = datas})})
-  }
+  //}
   
 
   getSubcategories(){
     this.CategoriesService.getCategories().subscribe(categories => this.categories = categories)
+  }
+
+  getInterests() {
+    this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)})
   }
 
 

@@ -30,7 +30,6 @@ export class SubCategoriesBackendService {
   getSubCategoryProducts(id: number) : Observable<ProductsB> {
     var day = formatDate(new Date(), 'yyyy/MM/dd', 'en');
     const url = `${this.apiUrl}/${id}/products?showAt=${day}`;
-    console.log(url);
     return this.http.get<ProductsB>(url);
   }
 

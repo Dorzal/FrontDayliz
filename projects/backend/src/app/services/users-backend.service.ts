@@ -88,11 +88,10 @@ export class UsersBackendService {
     return this.http.get<UsersB[]>(url);
   }
 
-  async getUserSubCategoryProducts(idInterest : number) {
+  async getUserSubCategoryProducts() {
     let idUser =  await this.know();
-    var day = formatDate(new Date(), 'yyyy/MM/dd', 'en');
-    const url = `${this.apiUrl}/${idUser}/interests/${idInterest}/products?showAt=${day}`;
-    return this.http.get<ProductsB>(url);
+    const url = `${this.apiUrl}/${idUser['id']}/bouquet`;
+    return this.http.get<object>(url);
   }
 
 

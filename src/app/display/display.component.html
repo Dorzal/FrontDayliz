@@ -1,10 +1,10 @@
 <button  class="btn btn-primary">Mon bouquet</button>
 
 
-<ul *ngFor= "let category of categories">
+<ul *ngFor= "let category of categories" class="nav flex-column">
     {{ category.name}}
-    <li *ngFor= "let sub of category.subCategories; let i = index">
-        <button (click)="getSubProducts(sub.id)" class="btn btn-primary">{{ sub?.name}}</button>
+    <li class="nav-item" *ngFor= "let sub of category.subCategories; let i = index" >
+        <a (click)="getSubProducts(sub.id)" class="nav-link active">{{ sub?.name}}</a>
     </li>
 </ul>
 <div *ngIf="product">
@@ -14,3 +14,9 @@
     <p>{{product?.url}}</p>
     <p>{{product?.picture}}</p> 
 </div>  
+
+
+<ul *ngFor= "let prod of products" class="nav flex-column">
+
+    <p style="color : red">{{ prod.name}}</p>
+</ul>
