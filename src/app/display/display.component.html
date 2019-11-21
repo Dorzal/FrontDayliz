@@ -1,4 +1,4 @@
-<button  class="btn btn-primary">Mon bouquet</button>
+<button (click)="getInterests()" class="btn btn-primary">Mon bouquet</button>
 
 
 <ul *ngFor= "let category of categories" class="nav flex-column">
@@ -15,8 +15,14 @@
     <p>{{product?.picture}}</p> 
 </div>  
 
+<div *ngIf="!product">
+    <ul *ngFor= "let prod of products" class="nav flex-column">
 
-<ul *ngFor= "let prod of products" class="nav flex-column">
+        <p style="color : red">{{ prod.name}}</p>
+        <p style="color : red">{{ prod.price}}</p>
+        <p style="color : red">{{ prod.url}}</p>
+        <p style="color : red">{{ prod.picture}}</p>
 
-    <p style="color : red">{{ prod.name}}</p>
-</ul>
+        <br/>
+    </ul>
+</div>

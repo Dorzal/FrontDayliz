@@ -44,6 +44,7 @@ export class DisplayComponent implements OnInit {
   }
 
   getInterests() {
+    this.product = null;
     this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)})
   }
 
