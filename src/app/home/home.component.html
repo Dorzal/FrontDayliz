@@ -1,23 +1,28 @@
-
-
-<main>
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-8">
-              <h1>Dayliz</h1>
-              <p>Caxime antea dierum hac Ergo multa cumulus pertinerent hominis tributus tributus causa cumulus ad cum idem decreverim publicae rei.</p>
-          </div>
-          <div class="col-4">
-            <button type="button" class="btn btn-primary btn-lg" routerLink="/login"><p>Connexion</p></button>
-            <button type="button" class="btn btn-secondary btn-lg" routerLink="/register"><p>Inscription</p></button>
-          </div>
-      </div>
+<div class="home">
+  <div class="home-info">
+      <h1>Dayliz</h1>
+      <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+      </p>
   </div>
-  
-  
-
-
-      
-
-  
-</main>
+  <div class="home-login">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-login" >
+          <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+          <label for="username" class="sr-only">Email</label>
+          <input type="text" formControlName="username" class="form-control" placeholder="Adresse email" autofocus [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Username is required</div>
+          </div>
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" formControlName="password" class="form-control" placeholder="Mot de passe" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
+          <button [disabled]="loading" class="btn btn-lg btn-primary btn-block">Se connecter</button>
+          <div class="login-link">
+          <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+          <a class="btn btn-link mdpoubli">Mot de passe oublié</a>
+          </div>
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  </form>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+.home
+{
+    
+    display: grid;
+    grid-auto-columns: 1fr 800px;
+    grid-auto-flow: column;
+    width: 100vw;
+    height: 100vh;
+    &-info
+    {
+        background: linear-gradient(to bottom, #273c75, #192a56);
+        display : flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        color : #f5f6fa;
+        p{
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+    }
+    &-login
+    {
+        background: #f5f6fa;
+        display : flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+
+    .form-login
+    {
+        min-width: 450px;
+        text-align: center;
+    }
+
+    input
+    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 48px;
+    }
+
+    .login-link
+    {
+        display: flex;
+        flex-flow: row;
+        a{
+            text-align: center;
+            flex: 1;
+            &.mdpoubli{
+                flex: 2;
+            }
+        }
+        
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #5482FF;
+        border-color: #5482FF;
+    }
+    }
+}

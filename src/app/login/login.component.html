@@ -1,24 +1,22 @@
-<div class="col-sm">
-<h2>Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Login</button>
-        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
-    </div>
-    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-</form>
+<div class="container-login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-login" >
+            <img class="login-image" src="../../assets/calendar.png" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+            <label for="username" class="sr-only">Email</label>
+            <input type="text" formControlName="username" class="form-control" placeholder="Adresse email" autofocus [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" formControlName="password" class="form-control" placeholder="Mot de passe" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+            <button [disabled]="loading" class="btn btn-lg btn-primary btn-block">Se connecter</button>
+            <div class="login-link">
+            <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+            <a class="btn btn-link mdpoubli">Mot de passe oublié</a>
+            </div>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </form>
 </div>

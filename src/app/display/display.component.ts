@@ -5,6 +5,7 @@ import { CategoriesB } from 'projects/backend/src/app/Category/categories-backen
 import { SubCategoriesBackendService } from 'projects/backend/src/app/services/sub-categories-backend.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsB } from 'projects/backend/src/app/Product/products-backend/productsB';
+import { count } from 'rxjs/operators';
 
 
 
@@ -15,10 +16,12 @@ import { ProductsB } from 'projects/backend/src/app/Product/products-backend/pro
 })
 export class DisplayComponent implements OnInit {
   products : Array<object>= [];
+  hide : true;
   categories : CategoriesB[];
   product : ProductsB;
   response : [];
   idInterest;
+  Bool = false;
   constructor(
     private CategoriesService: CategoriesBackendService, 
     private subCategoriesBackendService : SubCategoriesBackendService,
@@ -32,12 +35,6 @@ export class DisplayComponent implements OnInit {
   getSubProducts(id): void {
     this.subCategoriesBackendService.getSubCategoryProducts(id).subscribe(data => {this.product = data[0]});
   }
-
-  
-  //getInterests() {
-    // this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((datas: Array<object>)=>{this.interest = datas})})
-  //}
-  
 
   getSubcategories(){
     this.CategoriesService.getCategories().subscribe(categories => this.categories = categories);
