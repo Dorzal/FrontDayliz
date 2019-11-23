@@ -1,13 +1,20 @@
 <div class="display">
     <nav>
-        <img src="../../assets/calendar.png" id="dayliz">
-        <ul *ngFor= "let category of categories" class="categories">
-                <h3><img src="{{category.logo}}">{{ category.name}}</h3>
+        <div >
+            <img src="../../assets/calendar.png" id="dayliz">
+        </div>
+        <div>
+            <ul *ngFor= "let category of categories" class="categories">
+                    <h3><img src="{{category.logo}}">{{ category.name}}</h3>
 
-                <li *ngFor= "let sub of category.subCategories; let i = index" class="subcategories" >
-                <h4><a (click)="getSubProducts(sub.id)">{{sub?.logo}}{{ sub?.name}}</a></h4>
-                </li>
-        </ul> 
+                    <li *ngFor= "let sub of category.subCategories; let i = index" class="subcategories" >
+                    <h4><a (click)="getSubProducts(sub.id)">{{sub?.logo}}{{ sub?.name}}</a></h4>
+                    </li>
+            </ul> 
+        </div>
+        <div class="option">
+            <img src="{{ user?.avatar }}" (click)="profil()">
+        </div>
     </nav>
     <div class="content">
         <div class="interest">

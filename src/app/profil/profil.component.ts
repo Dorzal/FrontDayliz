@@ -15,13 +15,13 @@ export class ProfilComponent implements OnInit {
   constructor(private userBackendService : UsersBackendService, private location : Location, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
-    this.myProfile();
+    this.myProfil();
   }
 
 
-  myProfile()
+  myProfil()
   {
-    this.userBackendService.getProfile().then((data)=>{data.subscribe(user => this.user = user)});
+    this.userBackendService.getProfil().then((data)=>{data.subscribe(user => this.user = user)});
   }
 
   goBack() {

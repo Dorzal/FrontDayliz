@@ -12,20 +12,21 @@
 
 nav
 {
-    
+    display: grid;
+    grid-auto-columns: 180px 1fr 180px;
     background :#273c75;
     min-height: 100vh;
     color: white;
     
     #dayliz{
         width: 125px;
-        margin-left: 80px;
-        margin-top : 40px;
-        margin-bottom: 25px;
+        
+
     }
     
     .categories
     {
+        min-width: 300px;
         h3{
             color:#5482FF ;
         }
@@ -37,6 +38,17 @@ nav
     .subcategories
     {
         list-style-type:none;
+    }
+
+    .option{
+        text-align: center;
+        min-width: 300px;
+        img{
+            border-radius: 100%;
+            width: 85px;
+            height: 85px;
+            border: 5px solid white;
+        }
     }
 }
 
@@ -65,7 +77,12 @@ nav
             border : 2px;
             
         }
+        img:hover{
+            width: 77px;
+            height: 77px;
+        }
     }
+    
     
 }
 

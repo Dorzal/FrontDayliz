@@ -95,7 +95,7 @@ export class UsersBackendService {
   }
 
 
-  async getProfile(){
+  async getProfil(){
     let idUser =  await this.know();
     const url = `${this.apiUrl}/${idUser['id']}`;
     return this.http.get<UsersB>(url);

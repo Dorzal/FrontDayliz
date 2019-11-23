@@ -3,9 +3,11 @@ import { UsersBackendService } from 'projects/backend/src/app/services/users-bac
 import { CategoriesBackendService } from 'projects/backend/src/app/services/categories-backend.service';
 import { CategoriesB } from 'projects/backend/src/app/Category/categories-backend/categoriesB';
 import { SubCategoriesBackendService } from 'projects/backend/src/app/services/sub-categories-backend.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsB } from 'projects/backend/src/app/Product/products-backend/productsB';
 import { count } from 'rxjs/operators';
+import { AuthenticationService } from '../services/authentication.service';
+import { UsersB } from 'projects/backend/src/app/User/users-backend/usersB';
 
 
 
@@ -21,15 +23,18 @@ export class DisplayComponent implements OnInit {
   product : ProductsB;
   response : [];
   idInterest;
-  Bool = false;
+  user: UsersB;
   constructor(
     private CategoriesService: CategoriesBackendService, 
     private subCategoriesBackendService : SubCategoriesBackendService,
-    private userBackendService : UsersBackendService) { }
+    private userBackendService : UsersBackendService,
+    private authenticationService: AuthenticationService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getSubcategories();
     this.getInterests();
+    this.getProfil();
   }
 
   getSubProducts(id): void {
@@ -42,6 +47,19 @@ export class DisplayComponent implements OnInit {
 
   getInterests() {
     this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)});
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+  }
+
+  profil() {
+      this.router.navigate(['/profil']);
+  }
+
+   getProfil() {
+      this.userBackendService.getProfil().then((data)=>{data.subscribe(user => this.user = user)});
   }
 
 
