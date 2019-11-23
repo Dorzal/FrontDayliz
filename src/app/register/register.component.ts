@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
+import { MustMatch } from '../helpers/must-match.validator';
 import { AuthenticationService } from '../services/authentication.service';
 import { AlertService } from '../services/alert.service';
 import { UsersBackendService} from '../../../projects/backend/src/app/services/users-backend.service'
 
-@Component({templateUrl: 'register.component.html'})
+@Component({templateUrl: 'register.component.html',
+            styleUrls: ['register.component.scss']})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
@@ -31,8 +32,12 @@ export class RegisterComponent implements OnInit {
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', Validators.required],
+            birthday: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
-            birthday: ['', Validators.required]
+            confirmPassword: ['', Validators.required]
+        },
+        {
+            validator: MustMatch('password', 'confirmPassword')
         });
     }
 

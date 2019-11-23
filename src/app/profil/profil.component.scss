@@ -1,0 +1,22 @@
+.profil
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #273c75, #192a56);
+
+}
+
+.form-register
+{
+    background-color: #f5f6fa;
+    padding :80px;
+    margin: 40px;
+    width: 30%;
+    min-width: 450px;
+    text-align: center;
+    box-shadow: 0px 0  7px 2px #222f3e;
+}
