@@ -12,7 +12,7 @@
     <div class="content">
         <div class="interest">
             <div *ngFor= "let prod of products" class="bulle">
-                <img src="{{ prod.picture}}" alt="...">
+                <img src="{{ prod.picture}}" alt="..." (click)="product = prod">
                 <p>{{ prod.name}}</p>
             </div>
         </div>
@@ -26,7 +26,7 @@
                     <div class="card-img">
                         <img src="{{products[0]?.picture}}" alt="...">
                     </div>
-                    <div>
+                    <div class="card-info">
                         <h2 class="card-title">{{products[0]?.name}}</h2>
                         <p class="card-description">{{products[0]?.description}}</p>
                         <p class="card-price">{{products[0]?.price}}</p>
@@ -43,7 +43,7 @@
                     <div>
                         <h2 class="card-title">{{product?.name}}</h2>
                         <p class="card-description">{{product?.description}}</p>
-                        <p class="card-price">{{products?.price}}</p>
+                        <p class="card-price">{{product?.price}}</p>
                         <a class="card-url" href="{{products?.url}}" >Site</a>
                     </div>
                 </div>

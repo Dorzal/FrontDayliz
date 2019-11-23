@@ -105,7 +105,6 @@ nav
     height: 100%;
     .card{
         
-        box-shadow: 0px 0px  2px 2px #222f3e;
         display: grid;
         grid-auto-columns: 1fr 1fr;
         grid-auto-flow: column;
@@ -130,13 +129,14 @@ nav
             font-size: 50px;
         }
         img{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height:100%;
-            width:100%;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
+            margin-top : 50px;
+            padding-right: 30px;
+            border-right: 1px solid #c8d6e5;
+            height:80%;
+            width:80%;
+
+        }&-info{
+            
         }
     }
 }
