@@ -1,17 +1,17 @@
+<div class="interest"> 
 <h1>
   Choisissez vos centre d'intérêts
 </h1>
-  
-
+ 
   <ul *ngFor= "let category of categories">
     {{ category.name}}
     <li *ngFor= "let sub of category.subCategories; let i = index">
-        <div>
+        <div class="choice">
           <input (change)="onToggle(sub)" type="checkbox" id="{{ sub.name }}" name="{{ sub.name }}" value="/api/sub_categories/{{ sub.id }}">
           <label for="{{ sub.name }}">{{ sub.name }}</label>
         </div>
     </li>
   </ul>
   <button (click)="patchInterest()" class="btn btn-success"> Add </button>
-
+</div>
 

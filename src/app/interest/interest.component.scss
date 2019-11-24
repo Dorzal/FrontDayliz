@@ -1,0 +1,30 @@
+h1{
+    color : white;
+}
+
+.interest
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #273c75, #192a56);
+}
+
+.choice
+{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 70px;
+    width: 400px;
+    background-color: #f5f6fa;
+    padding : 25px;
+    border-radius: 5px;
+    
+}
+
+li{
+    list-style-type:none;
+}
