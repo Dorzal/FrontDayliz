@@ -4,7 +4,7 @@
 </h1>
  
   <ul *ngFor= "let category of categories">
-    {{ category.name}}
+    <h2>{{ category.name}}</h2>
     <li *ngFor= "let sub of category.subCategories; let i = index">
         <div class="choice">
           <input (change)="onToggle(sub)" type="checkbox" id="{{ sub.name }}" name="{{ sub.name }}" value="/api/sub_categories/{{ sub.id }}">
@@ -12,6 +12,6 @@
         </div>
     </li>
   </ul>
-  <button (click)="patchInterest()" class="btn btn-success"> Add </button>
+  <button (click)="patchInterest()" class="btn btn-primary"> Valider </button>
 </div>
 

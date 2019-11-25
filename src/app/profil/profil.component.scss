@@ -10,13 +10,48 @@
 
 }
 
-.form-register
+.info
 {
     background-color: #f5f6fa;
-    padding :80px;
+    
     margin: 40px;
     width: 30%;
-    min-width: 450px;
-    text-align: center;
+    min-width: 550px;
+    min-height: 800px;
+    
     box-shadow: 0px 0  7px 2px #222f3e;
+
+    display: grid;
+    grid-auto-rows: 60px 1fr 1fr;
+
+    .avatar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #image{
+        width: 180px;
+        height: 180px;
+        border-bottom-left-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+    }
+    .arrow{
+        width: 40px;
+        height: 40px;
+        margin-left: 20px ;
+        margin-top: 10px ;
+    }
+    .data{
+        display: grid;
+        grid-auto-columns: 1fr 1fr;
+        grid-auto-flow: column;
+        .infoIRL{
+            
+        }
+    }
+    
 }
+

@@ -1,9 +1,10 @@
 <div class="display">
     <nav>
-        <div >
-            <img src="../../assets/calendar.png" id="dayliz">
+        <div class="logo">
+                <img src="../../assets/calendar.png" id="dayliz">
         </div>
         <div>
+            
             <ul *ngFor= "let category of categories" class="categories">
                     <h3><img src="{{category?.logo}}">{{ category.name}}</h3>
 
@@ -19,48 +20,58 @@
     <div class="content">
         <div class="interest">
             <div *ngFor= "let prod of products" class="bulle">
-                <img src="{{ prod?.picture}}" alt="..." (click)="product = prod">
+                <img src="{{ prod?.picture}}" alt="..." (click)="getComments(prod.id) && product = prod">
                 <p>{{ prod.name}}</p>
             </div>
         </div>
         <div class="window">
-            <div class="button-left">
-                
-            </div>
+            <div>
+                <div *ngIf="!product" class="default">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="{{products[0]?.picture}}" alt="...">
+                        </div>
+                        <div class="card-info">
+                            <h2 class="card-title">{{products[0]?.name}}</h2>
+                            <p class="card-description">{{products[0]?.description}}</p>
+                            <p class="card-price">{{products[0]?.price}}</p>
+                            <a class="card-url" href="{{products[0]?.url}}" >Site</a>
+                        </div>
+                    </div>
+                </div> 
 
-            <div *ngIf="!product" class="default">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="{{products[0]?.picture}}" alt="...">
-                    </div>
-                    <div class="card-info">
-                        <h2 class="card-title">{{products[0]?.name}}</h2>
-                        <p class="card-description">{{products[0]?.description}}</p>
-                        <p class="card-price">{{products[0]?.price}}</p>
-                        <a class="card-url" href="{{products[0]?.url}}" >Site</a>
-                    </div>
-                </div>
-            </div> 
-
-            <div *ngIf="product" class="default">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="{{product?.picture}}" alt="...">
-                    </div>
-                    <div>
-                        <h2 class="card-title">{{product?.name}}</h2>
-                        <p class="card-description">{{product?.description}}</p>
-                        <p class="card-price">{{product?.price}}</p>
-                        <a class="card-url" href="{{products?.url}}" >Site</a>
+                <div *ngIf="product" class="default">
+                    <div class="card">
+                        <div class="card-img">
+                            <img src="{{product?.picture}}" alt="...">
+                        </div>
+                        <div>
+                            <h2 class="card-title">{{product?.name}}</h2>
+                            <p class="card-description">{{product?.description}}</p>
+                            <p class="card-price">{{product?.price}}</p>
+                            <a class="card-url" href="{{products?.url}}" >Site</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="button-right">
-                
+            <div class="comment" >
+                <div *ngFor= "let message of comments" class="message">
+                    <div class="headermessage">
+                        <div class="datemessage">
+                            <p>{{message.createdAt | slice:0:10}}</p>
+                        </div>
+                        <div class="writtermessage">
+                            <p>{{message.userCommentary.email}}</p>
+                        </div>
+                    </div>
+                    <div class="contentmessage">
+                        <p>{{message.content}}</p>
+                    </div>  
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
  

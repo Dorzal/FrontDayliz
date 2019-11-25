@@ -8,6 +8,9 @@ import { ProductsB } from 'projects/backend/src/app/Product/products-backend/pro
 import { count } from 'rxjs/operators';
 import { AuthenticationService } from '../services/authentication.service';
 import { UsersB } from 'projects/backend/src/app/User/users-backend/usersB';
+import { SubcategoriesB } from 'projects/backend/src/app/SubCategory/sub-categories-backend/subcategoriesB';
+import { CommentBackendService } from 'projects/backend/src/app/services/comment-backend.service';
+import { CommentsB } from 'projects/backend/src/app/Product/products-backend/commentsB';
 
 
 
@@ -20,38 +23,46 @@ export class DisplayComponent implements OnInit {
   products : Array<object>= [];
   hide : true;
   categories : CategoriesB[];
+  subCategories : SubcategoriesB[];
   product : ProductsB;
   response : [];
   idInterest;
   user: UsersB;
+  comments: CommentsB[];
   constructor(
     private CategoriesService: CategoriesBackendService, 
     private subCategoriesBackendService : SubCategoriesBackendService,
     private userBackendService : UsersBackendService,
     private authenticationService: AuthenticationService,
-    private router: Router) { }
+    private router: Router,
+    private comment: CommentBackendService) { }
 
   ngOnInit() {
-    this.getSubcategories();
+    this.getcategories();
     this.getInterests();
     this.getProfil();
   }
 
   getSubProducts(id): void {
-    this.subCategoriesBackendService.getSubCategoryProducts(id).subscribe(data => {this.product = data[0]});
+    this.subCategoriesBackendService.getSubCategoryProducts(id).subscribe(data => {this.product = data[0], this.getComments(this.product.id)});
   }
 
-  getSubcategories(){
+  getcategories(){
     this.CategoriesService.getCategories().subscribe(categories => this.categories = categories);
   }
 
   getInterests() {
     this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)});
+    
   }
 
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
+  }
+
+  getComments(id){
+    this.comment.getComments(id).subscribe(comments => this.comments = comments);
   }
 
   profil() {

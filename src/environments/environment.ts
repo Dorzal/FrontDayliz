@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   rootUrl: 'http://51.15.233.25',
+  //rootUrl: 'http://localhost',
   url: 'http://localhost:4200'
 };
 
