@@ -62,6 +62,7 @@ export class DisplayComponent implements OnInit {
   }
 
   getComments(id){
+    this.comments = null;
     this.comment.getComments(id).subscribe(comments => this.comments = comments);
   }
 

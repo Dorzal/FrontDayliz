@@ -20,7 +20,7 @@
     <div class="content">
         <div class="interest">
             <div *ngFor= "let prod of products" class="bulle">
-                <img src="{{ prod?.picture}}" alt="..." (click)="getComments(prod.id) && product = prod">
+                <img src="{{ prod?.picture}}" alt="..." (click)="product = prod; getComments(prod.id)">
                 <p>{{ prod.name}}</p>
             </div>
         </div>
