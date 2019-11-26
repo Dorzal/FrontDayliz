@@ -17,6 +17,13 @@ nav
     border-right: 1px solid #c8d6e5;
     //background :#273c75;
     min-height: 100vh;
+
+    .menu{
+        display: flex;
+        justify-content: start;
+        align-items: flex-end;
+        flex-direction: column;
+    }
     
     .logo{
         display: flex;
@@ -123,43 +130,27 @@ nav
     align-items: center;
     height: 100%;
     .card{
-        
         display: grid;
-        grid-auto-columns: 1fr 1fr;
-        grid-auto-flow: column;
-        border-radius: 5px;
-        width: 80%;
-        height: 80%;
+        grid-auto-rows: 1fr 1fr;
+        border: none;
+        grid-auto-flow: row;
+        min-width: 800px;
+        min-height: 700px ;
         text-align: center;
         &-title{
-            font-size: 30px;
-            margin : 20px;
+            
         }&-description{
-            margin: 10px;
+            
         }&-url{
-            background-color: #5482FF;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-right: 60px;
-            padding-left: 60px;
-            border-radius : 5px;
-            color: white;
+            
         }&-price{
-            font-size: 50px;
+            
         }
         img{
-            
-            padding-right: 10px;
-            border-right: 1px solid #c8d6e5;
-            height:70%;
-            width:70%;
-            max-height: 350px;
-            max-width: 325px;
 
         }&-info{
             
         }
-
         .card-img{
             display: flex;
             align-items: center;
