@@ -14,18 +14,20 @@ nav
 {
     display: grid;
     grid-auto-rows: 120px 1fr 100px;
-    border-right: 1px solid #c8d6e5;
     //background :#273c75;
     min-height: 100vh;
 
     .menu{
+        margin-top: 5%;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: flex-end;
         flex-direction: column;
+        border-right: 1px solid #c8d6e5;
     }
     
     .logo{
+        background-color: #c0392b;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -59,7 +61,6 @@ nav
         min-width: 300px;
         img{
             border-radius: 100%;
-            border: 1px solid black;
             width: 80px;
             height: 80px;
         }
@@ -82,11 +83,12 @@ nav
 {
     display : flex;
     flex-flow: row;
-    border-bottom: 1px solid #c8d6e5;
+    background-color: #c0392b;
     .bulle{
         text-align: center;
         padding-left: 40px;
         padding-top: 15px;
+        font-weight: bold;
         img{
         
             border-radius: 100%;
@@ -98,6 +100,7 @@ nav
         img:hover{
             width: 77px;
             height: 77px;
+            opacity: 0.5;
         }
     }
     
@@ -107,8 +110,7 @@ nav
 .window
 {
     position: relative;
-    align-items: center;
-    justify-content: center;
+    
     display: grid;
     grid-auto-columns: 1fr 470px;
     grid-auto-flow: column;
@@ -125,37 +127,57 @@ nav
 
 .default
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    .card{
+    
+    .carding{
         display: grid;
         grid-auto-rows: 1fr 1fr;
-        border: none;
         grid-auto-flow: row;
-        min-width: 800px;
-        min-height: 700px ;
-        text-align: center;
-        &-title{
-            
-        }&-description{
-            
-        }&-url{
-            
-        }&-price{
-            
-        }
-        img{
+        margin-top : 5%;
+        margin-left: 5%;
 
-        }&-info{
+        .card-top{
+            display: grid;
+            grid-auto-columns: 300px 1fr;
+            grid-auto-flow: column;
+        }
+        .card-title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;    
             
         }
-        .card-img{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .card-description{
+            text-align: justify;
+            margin: 7%;
         }
+        .card-price{
+            font-size: 40px;
+        }
+        .card-url{
+            
+            display: flex;
+            justify-content: center;
+            margin-right: 10%;
+            width: 100px;
+            height:50px;
+            padding-top : 10px;
+            padding-bottom: 10px;
+            padding-right: 40px;
+            padding-left: 40px;
+            border-radius: 15%;
+            color :white;
+            background-color: #c0392b;
+            
+            
+        }        
+        img{
+            max-width: 300px;
+            max-height: 300px;
+            min-width: 300px;
+            min-height: 300px;
+        }
+        
     }
 
 }
@@ -173,9 +195,8 @@ nav
     background-color: #5482FF;
     border: solid 1px #5482FF;
     border-radius : 5px;
-    max-width: 80%;
-    height:100%;
-    width: 325px;
+    max-width: 90%;
+    width: 400px;
     margin-top : 20px;
 
     .headermessage{
@@ -188,5 +209,6 @@ nav
         .writtermessage{
             text-align: right;
         }
+        .contentmessage{}
     }
 }
