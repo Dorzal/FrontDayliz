@@ -56,19 +56,34 @@
                 </div>
             </div>
             <div class="comment" >
-                <div *ngFor= "let message of comments" class="message">
-                    <div class="headermessage">
-                        <div class="datemessage">
-                            <p>{{message.createdAt | slice:0:10}}</p>
+                <div class="wall">
+                    <div *ngFor= "let message of comments" class="message">
+                        <div class="headermessage">
+                            <div class="datemessage">
+                                <p>{{message.createdAt | slice:0:10}}</p>
+                            </div>
+                            <div class="writtermessage">
+                                <p>{{message.userCommentary.email}}</p>
+                            </div>
                         </div>
-                        <div class="writtermessage">
-                            <p>{{message.userCommentary.email}}</p>
-                        </div>
+                        <div class="contentmessage">
+                            <p>{{message.content}}</p>
+                        </div>  
                     </div>
-                    <div class="contentmessage">
-                        <p>{{message.content}}</p>
-                    </div>  
                 </div>
+
+                <div class="writting">
+                    <div *ngIf="product" class="form-message">
+                        <textarea #message cols="40" rows="5" name="message"></textarea>
+                        <button (click)="addComment(message.value, product?.id)" message.value=''>Ajouter</button>
+                    </div>
+        
+                    <div *ngIf="!product" class="form-message">
+                        <textarea #message cols="40" rows="5" name="message"></textarea>
+                        <button (click)="addComment(message.value, products[0]?.id)">Ajouter</button>
+                    </div>   
+                </div>
+                
             </div>
         </div>
     </div>

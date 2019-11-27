@@ -21,4 +21,9 @@ export class CommentBackendService {
         const url = `${this.apiUrl}/api/products/${id}/commentaries`;
         return this.http.get<CommentsB[]>(url);
     }
+
+    addComment( comment: object) {
+      const url = `${this.apiUrl}/api/commentaries`;
+      return this.http.post(url, comment, httpOptions);
+    }
 }

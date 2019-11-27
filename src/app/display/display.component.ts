@@ -10,9 +10,6 @@ import { AuthenticationService } from '../services/authentication.service';
 import { UsersB } from 'projects/backend/src/app/User/users-backend/usersB';
 import { SubcategoriesB } from 'projects/backend/src/app/SubCategory/sub-categories-backend/subcategoriesB';
 import { CommentBackendService } from 'projects/backend/src/app/services/comment-backend.service';
-import { CommentsB } from 'projects/backend/src/app/Product/products-backend/commentsB';
-
-
 
 @Component({
   selector: 'app-display',
@@ -26,7 +23,7 @@ export class DisplayComponent implements OnInit {
   subCategories : SubcategoriesB[];
   product : ProductsB;
   user: UsersB;
-  comments: CommentsB[];
+  comments: object[];
   constructor(
     private CategoriesService: CategoriesBackendService, 
     private subCategoriesBackendService : SubCategoriesBackendService,
@@ -36,6 +33,7 @@ export class DisplayComponent implements OnInit {
     private comment: CommentBackendService) { }
 
   ngOnInit() {
+   
     this.getcategories();
     this.getInterests();
     this.getProfil();
@@ -75,6 +73,16 @@ export class DisplayComponent implements OnInit {
    getProfil() {
       this.userBackendService.getProfil().then((data)=>{data.subscribe(user => this.user = user)});
   }
+
+  async addComment(message: string, idproduct : number) {
+    let user =  await this.userBackendService.know();
+    var dataproduct = `/api/products/${idproduct}`;
+    console.log(dataproduct);
+    var datauser = `/api/users/${user['id']}`;
+    console.log(datauser);
+    this.comment.addComment({content : message, product : dataproduct, userCommentary : datauser} as object).subscribe(comment => {this.comments.push(comment)} );
+  }
+
 
 
 }

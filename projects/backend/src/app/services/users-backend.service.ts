@@ -69,7 +69,6 @@ export class UsersBackendService {
     console.log(u);
     this.know().then(data => {
       const url = `${this.apiUrl}/${data['id']}`;
-      console.log(url);
       this.http.patch(url, u, httpOptions).subscribe();
     })
   }
