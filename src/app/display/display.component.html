@@ -3,7 +3,7 @@
         <div class="logo">
                 <img src="../../assets/calendar.png" id="dayliz">
         </div>
-        <div>
+        <div class="menu">
             
             <ul *ngFor= "let category of categories" class="categories">
                     <h3><img src="{{category?.logo}}">{{ category.name}}</h3>
@@ -19,37 +19,37 @@
     </nav>
     <div class="content">
         <div class="interest">
-            <div *ngFor= "let prod of products" class="bulle">
-                <img src="{{ prod?.picture}}" alt="..." (click)="product = prod; getComments(prod.id)">
+            <div *ngFor= "let prod of products" class="bulle" (click)="product = prod; getComments(prod.id)">
+                <img src="{{ prod?.picture}}" alt="..." >
                 <p>{{ prod.name}}</p>
             </div>
         </div>
         <div class="window">
             <div>
                 <div *ngIf="!product" class="default">
-                    <div class="card">
-                        <div class="card-img">
+                    <div class="carding">
+                        <div class="card-top">
                             <img src="{{products[0]?.picture}}" alt="...">
+                            <h2 class="card-title">{{products[0]?.name}}</h2>
                         </div>
                         <div class="card-info">
-                            <h2 class="card-title">{{products[0]?.name}}</h2>
                             <p class="card-description">{{products[0]?.description}}</p>
-                            <p class="card-price">{{products[0]?.price}}</p>
+                            <h3 class="card-price">{{products[0]?.price}}</h3>
                             <a class="card-url" href="{{products[0]?.url}}" >Site</a>
                         </div>
                     </div>
                 </div> 
 
                 <div *ngIf="product" class="default">
-                    <div class="card">
-                        <div class="card-img">
+                    <div class="carding">
+                        <div class="card-top">
                             <img src="{{product?.picture}}" alt="...">
-                        </div>
-                        <div>
                             <h2 class="card-title">{{product?.name}}</h2>
+                        </div>
+                        <div class="card-info">
                             <p class="card-description">{{product?.description}}</p>
-                            <p class="card-price">{{product?.price}}</p>
-                            <a class="card-url" href="{{products?.url}}" >Site</a>
+                            <h3 class="card-price">{{product?.price}}</h3>
+                            <a class="card-url" href="{{product?.url}}" >Site</a>
                         </div>
                     </div>
                 </div>
