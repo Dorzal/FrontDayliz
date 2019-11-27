@@ -25,8 +25,6 @@ export class DisplayComponent implements OnInit {
   categories : CategoriesB[];
   subCategories : SubcategoriesB[];
   product : ProductsB;
-  response : [];
-  idInterest;
   user: UsersB;
   comments: CommentsB[];
   constructor(
@@ -52,7 +50,11 @@ export class DisplayComponent implements OnInit {
   }
 
   getInterests() {
-    this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=> this.products = products)});
+    this.userBackendService.getUserSubCategoryProducts().then((data)=>{data.subscribe((products: Array<object>)=>{
+      this.products = products
+      //@ts-ignore
+      this.getComments(this.products[0].id)
+    })});
     
   }
 
